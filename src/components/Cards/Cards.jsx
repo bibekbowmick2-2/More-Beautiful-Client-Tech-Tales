@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Card from "./Card";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ContextProvider } from "../AuthProviders/AuthProvider";
 
 const Cards = ({ games }) => {
+  const navigate = useNavigate();
+  const {handleAddToWatchList,user} = useContext(ContextProvider);
+
   // const {name,description,picture,ratin} = games;
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-2 py-10 bg-[#04020e] ">
@@ -20,6 +24,12 @@ const Cards = ({ games }) => {
               <div className="card-actions justify-start">
                 <Link to={`/product-details/${game._id}`}>
                   <button className="btn btn-accent">Explore Details</button>
+                </Link><br/>
+
+                <Link to={`/gameWatchList`}>
+                  <button className="btn btn-accent" 
+                  onClick={() => handleAddToWatchList(game,navigate,user.email)}
+                  >Add to WishList</button>
                 </Link>
               </div>
             </div>

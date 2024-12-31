@@ -9,7 +9,8 @@
 }
 
 header {
-  background-image: url("../../assets/Homebg.jpg");
+  background-image: url("../../assets/loginbg.jpg");
+  
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CustomerSection.css";
 import { useLoaderData } from "react-router-dom";
 import Card from "../Cards/Card";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 // import caro4 from '../../assets/caro-2 (3).jpg'
 
 
 const AllReview = () => {
+  const [loading, setLoading] = useState(true);
+    
   const loaderData = useLoaderData(); 
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (loaderData) {
+        setLoading(false);
+      }
+     
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+
+
 
  
   const reviewm = Array.isArray(loaderData) ? loaderData : loaderData.reviews || [];
@@ -36,8 +53,18 @@ const AllReview = () => {
     <header className="header">
       <div className="container">
         <div className="container__left ">
-       
-          <h1>Read what our customers love about us</h1>
+        {
+          loading ? (
+            <>
+            <Skeleton height={100}  baseColor="#bab4b2"  borderRadius={15}/>
+            <Skeleton height={200}   baseColor="#bab4b2" borderRadius={15}/>
+            <Skeleton height={100}  baseColor="#bab4b2"  borderRadius={15}/>
+            </>
+          
+          ) : (
+
+            <>
+            <h1>Read what our customers love about us</h1>
           <p>
             Over 200 companies from diverse sectors consult us to enhance the
             user experience of their products and services.
@@ -68,10 +95,21 @@ const AllReview = () => {
               ))}
             </ul>
           </div>
+            </>
+          )
+        }
+       
+         
         
         </div>
 
-        <Card reviews={reviews}> </Card>
+        {loading ? (
+         
+          <Skeleton count={reviews.length} height={300} width={600}  borderRadius={15}  baseColor="#bab4b2" className="w-full mb-4" />
+          
+        ) : (
+          <Card reviews={reviews} />
+        )}
         
       </div>
     </header>
