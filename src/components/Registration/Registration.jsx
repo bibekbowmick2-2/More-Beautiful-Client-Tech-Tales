@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import dragonbg from "../../assets/dragonbg.jpg";
 import { ContextProvider } from "../AuthProviders/AuthProvider";
 import { useNavigate, Link } from "react-router-dom";
+import Animation from "./Animation.json";
+import Lottie from "lottie-react";
 const Registration = () => {
   const { handleSubmit, handleGoogle, loading, passwordError } = useContext(ContextProvider);
   const navigate = useNavigate();
@@ -10,18 +12,27 @@ const Registration = () => {
     handleSubmit(e, navigate); // Pass navigate to the context's method
   };
 
+
+  // const style = {
+  //   width: 800,
+  //   height: 800,
+  // }
+
   return (
     <div
-      style={{
-        backgroundImage: `url(${dragonbg})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "right",
-      }}
-      className="min-h-[900px] pt-[30px] px-4 lg:min-h-[850px] lg:pt-[30px] relative"
+      className="grid sm:grid-cols-1  lg:grid-cols-2  justify-center items-center  min-h-lvh pt-[30px] px-4  lg:pt-[30px]  bg-[#9b4284] "
     >
-      <div className=" hero opacity-90 bg-base-200 w-11/12  lg:max-w-md absolute lg:right-[200px] rounded-xl">
+       
+       <div className="max-w-[800px] max-h-[800px]">
+      <Lottie   animationData={Animation} loop={true} />
+      </div>
+
+      <div className="hero bg-opacity-80  lg:max-w-md   rounded-xl bg-[#d5a9c9]">
+     
+
+
         <div className="hero-content max-w-sm flex-col">
+
           <h1 className="text-3xl">Registration</h1>
           <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
             <form
