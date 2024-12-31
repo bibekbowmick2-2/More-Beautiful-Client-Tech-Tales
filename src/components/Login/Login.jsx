@@ -19,7 +19,7 @@ const Login = () => {
       }}
       className="min-h-[600px] pt-[50px] px-4 lg:min-h-[800px] lg:pt-[30px] relative"
     >
-      <div className=" hero opacity-90 bg-base-200 w-11/12  lg:max-w-md absolute lg:right-[200px] rounded-xl">
+      <div className=" hero opacity-90 bg-[#f3bc7f] w-11/12  lg:max-w-md absolute lg:right-[200px] rounded-xl">
         <div className="hero-content max-w-sm flex-col">
           <h1 className="text-3xl">Login</h1>
           <div className="card bg-base-100 w-full shrink-0 shadow-2xl">

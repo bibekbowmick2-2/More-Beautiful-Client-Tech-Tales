@@ -209,13 +209,13 @@ const AuthProvider = ({ children }) => {
     const password = e.target.password.value;
     setLoading(true);
    
-    const error = validatePassword(password);
-    if (error) {
-       setPasswordError(error); // Set the error message
-      return; // Stop form submission
-    }
+    // const error = validatePassword(password);
+    // if (error) {
+    //    setPasswordError(error); // Set the error message
+    //   return; // Stop form submission
+    // }
 
-     setPasswordError("");
+    //  setPasswordError("");
 
     await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {

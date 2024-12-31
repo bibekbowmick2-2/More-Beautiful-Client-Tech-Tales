@@ -22,7 +22,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home/>,
-                 loader: () => fetch('https://game-server-woad.vercel.app/'),
+                 loader: () => fetch('http://localhost:5000/'),
                 
                 
             },
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path: "/home",
                 element: <Home/>,
-                 loader: () => fetch('https://game-server-woad.vercel.app/'),
+                 loader: () => fetch('http://localhost:5000/'),
                 
             },
 

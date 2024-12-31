@@ -14,13 +14,13 @@ const Cards = ({ games }) => {
         <div className="mx-auto w-full pt-5">
           <div className="card bg-[#3f3a5b70] w-11/12 mx-auto shadow-xl rounded-none ">
             <div className="w-[100px] h-[100px]  mx-auto">
-              <img class="w-full mx-auto " src={game.thumbnail} alt="Shoes" />
+              <img class="w-full mx-auto " src={game?.image} alt="Shoes" />
             </div>
             <div className="card-body">
-              <h2 className="card-title">{game.title}</h2>
-              <p>{game.description}</p>
-              <p>Rating: 4.{game.rating}</p>
-              <p>Publishing: {game.publishing_year}</p>
+              <h2 className="card-title">{game?.title}</h2>
+              <p>{game?.longDescription}</p>
+             <p> {game?.category}</p>
+           
               <div className="card-actions justify-start">
                 <Link to={`/product-details/${game._id}`}>
                   <button className="btn btn-accent">Explore Details</button>

@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { ContextProvider } from '../AuthProviders/AuthProvider';
 import GameWatchListData from './GameWatchListData';
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const GameWatchList = () => {
     
@@ -12,30 +14,50 @@ const GameWatchList = () => {
 
   const  products = useLoaderData();
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchMyReviews = async () => {
       if (!user?.email) return;
 
-      
       try {
-        const response = await fetch(`https://game-server-woad.vercel.app/watchlist?email=${user.email}`);
-        console.log(user.email)
-        if (!response.ok) {
-          throw new Error("Failed to fetch reviews");
-        }
-        const data = await response.json();
-     setItems(data);
+        const timeoutId = setTimeout(async () => {
+          const response = await fetch(`https://game-server-woad.vercel.app/watchlist?email=${user.email}`);
+          console.log(user.email);
+          if (!response.ok) {
+            throw new Error("Failed to fetch reviews");
+          }
+          const data = await response.json();
+          setItems(data);
+
+          if(data){
+            setLoading(false);
+
+          }
+        }, 2000); // 1500 milliseconds delay
+
+        return () => clearTimeout(timeoutId); // Cleanup timeout on unmount
       } catch (err) {
         setError(err.message);
       }
+
+      
+      
     };
 
     fetchMyReviews();
   }, [user]);
     return (
         <div>
-           <GameWatchListData items={items}/>
+           {
+            loading ? <>
+            <Skeleton height={100}  count={6}  baseColor="#d5e4e3" highlightColor="#00f7ec"  borderRadius={15}
+              className='mt-4 max-w-[1800px] p-10 mx-auto'
+            />
+          
+            </> : <GameWatchListData items={items}/>
+           }
+           
         </div>
     );
 };
