@@ -87,7 +87,7 @@ const ProductDetailsPage = () => {
                Category : <span>{product.category}</span>
               </li>
               <li>
-              ShortDescription:{product.shortDescription} <span>In Stock</span>
+              ShortDescription:{product.shortDescription} <br/> <span>In Stock</span>
               </li>
              
               

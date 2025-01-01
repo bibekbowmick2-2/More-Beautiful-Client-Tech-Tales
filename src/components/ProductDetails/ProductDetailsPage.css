@@ -203,4 +203,18 @@ img{
     .product-content{
         padding-top: 0;
     }
+
+    
 }
+
+
+@media screen and (max-width: 800px){
+    .img-showcase{
+      
+        max-width: 60%;
+        margin: 0 auto;
+       
+    }
+}
+
+
