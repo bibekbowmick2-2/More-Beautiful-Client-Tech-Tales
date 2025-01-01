@@ -54,7 +54,7 @@ const router = createBrowserRouter([
             {
                 path: "/gameWatchList",
                 element: <PrivateRoute><GameWatchList/></PrivateRoute>,
-                loader: () => fetch('https://game-server-woad.vercel.app/watchlist'),
+                loader: () => fetch('http://localhost:5000/watchlist'),
 
             },
             {
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
             {
                 path: "/product-details/:id",
                 element: <ProductDetailsPage/>,
-                loader: () => fetch('https://game-server-woad.vercel.app/'),
+                loader: () => fetch('http://localhost:5000/'),
             },
 
           

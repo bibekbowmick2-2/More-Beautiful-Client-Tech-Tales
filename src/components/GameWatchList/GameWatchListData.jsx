@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ContextProvider } from '../AuthProviders/AuthProvider';
+import { Link } from 'react-router-dom';
 
 export default function GameWatchListData({items}) {
+  const {user} = useContext(ContextProvider);
 
     if (!items || items.length === 0) {
         return (
@@ -18,14 +21,12 @@ export default function GameWatchListData({items}) {
       <thead>
         <tr>
           <th className='lg:font-extrabold lg:text-2xl'>Serial No</th>
-          <th className='lg:font-extrabold lg:text-2xl'>Thumbnail</th>
+          <th className='lg:font-extrabold lg:text-2xl'>Image</th>
           <th className='lg:font-extrabold lg:text-2xl'>Name</th>
           <th className='lg:font-extrabold lg:text-2xl'>Title</th>
           <th className='lg:font-extrabold lg:text-2xl'>Email</th>
-          <th className='lg:font-extrabold lg:text-2xl'>Rating</th>
-          <th className='lg:font-extrabold lg:text-2xl'>Publishing_year</th>
-          <th className='lg:font-extrabold lg:text-2xl'>Description</th>
-          <th className='lg:font-extrabold lg:text-2xl'>genre</th>
+          <th className='lg:font-extrabold lg:text-2xl'>Short Description</th>
+          <th className='lg:font-extrabold lg:text-2xl'>Category</th>
           
         </tr>
       </thead>
@@ -39,20 +40,24 @@ export default function GameWatchListData({items}) {
             <div class="avatar">
               <div class="mask mask-squircle h-12 w-12">
                 <img
-                  src={review?.thumbnail}
+                  src={review?.image}
                   alt="Avatar Tailwind CSS Component" />
               </div>
             </div>
            
           </div>
         </td>
-            <td className='lg:font-extrabold'>{review?.name}</td>
+            <td className='lg:font-extrabold'>{user?.displayName}</td>
             <td className='lg:font-extrabold'>{review?.title}</td>
             <td className='lg:font-extrabold'>{review?.email}</td>
-            <td className='lg:font-extrabold'>{review?.rating}</td>
-            <td className='lg:font-extrabold'>{review?.publishing_year}</td>
-            <td className='lg:font-extrabold'>{review?.description}</td>
-            <td className='lg:font-extrabold'>{review?.genre}</td>
+            <td className='lg:font-extrabold'>{review?.shortDescription}</td>
+            <td className='lg:font-extrabold'>{review?.category}</td>
+          
+            <td><Link to={`/product-details/${review?._id}`}>
+                  <button className="btn btn-accent">Details</button>
+                </Link>
+                </td>
+            <td><button className='btn btn-error'>Remove</button></td>
           </tr>
         ))
       }

@@ -34,7 +34,7 @@ const ProductDetailsPage = () => {
         <div className="product-imgs">
           <div className="img-display">
             <div className="img-showcase ">
-              <img className="rounded-full" src={product.thumbnail} alt="Shoe 1" />
+              <img className="rounded-full" src={product.image} alt="Shoe 1" />
               {/* <img src="/shoes_images/shoe_2.jpg" alt="Shoe 2" />
               <img src="/shoes_images/shoe_3.jpg" alt="Shoe 3" />
               <img src="/shoes_images/shoe_4.jpg" alt="Shoe 4" /> */}
@@ -62,7 +62,7 @@ const ProductDetailsPage = () => {
             <i className="fas fa-star"></i>
             <i className="fas fa-star"></i>
             <i className="fas fa-star-half-alt"></i>
-            <span className="bg-white p-2 rounded-full ">4.{product.rating}</span>
+            {/* <span className="bg-white p-2 rounded-full ">4.{product.rating}</span> */}
           </div>
 
           <div className="product-price">
@@ -77,19 +77,19 @@ const ProductDetailsPage = () => {
           <div className="product-detail">
             <h2 className="text-slate-100">About this item:</h2>
             <p className="text-color">
-              {product.description}
+              {product.longDescription}
             </p>
             
             <ul className="text-color">
+              
+             
               <li>
-                Publishing year: <span>{product.publishing_year}</span>
+               Category : <span>{product.category}</span>
               </li>
               <li>
-                Available: <span>In Stock</span>
+              ShortDescription:{product.shortDescription} <span>In Stock</span>
               </li>
-              <li>
-               Genre : <span>{product.genre}</span>
-              </li>
+             
               
             </ul>
           </div>
