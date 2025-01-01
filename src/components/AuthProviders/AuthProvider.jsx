@@ -20,6 +20,7 @@ const AuthProvider = ({ children }) => {
   const provider = new GoogleAuthProvider();
   const [reviews, setReviews] = useState([]);
   const [passwordError, setPasswordError] = useState("");
+  const [wishlist, setWishlist] = useState([]);
 
 
 
@@ -325,6 +326,76 @@ const AuthProvider = ({ children }) => {
 
 
 
+
+
+  const handleWishDelete = (id) => {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: false,
+    });
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          fetch(`http://localhost:5000/watchlist1/${id}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.deletedCount > 0) {
+                console.log("deleted");
+                swalWithBootstrapButtons.fire({
+                  title: "Deleted!",
+                  text: "Your Blog from wishlist has been deleted.",
+                  icon: "success",
+
+
+                  
+                });
+
+                // setReviews((prevReviews) =>
+                //   prevReviews.filter((review) => review._id !== id)
+                // );
+
+              } else {
+                swalWithBootstrapButtons.fire({
+                  title: "Error!",
+                  text: "Could not delete the review.",
+                  icon: "error",
+                });
+              }
+            })
+            .catch((error) => {
+              console.error("Error deleting review:", error);
+            });
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your review is safe :)",
+            icon: "error",
+          });
+        }
+      });
+  };
+
+
+
+
 // const [items,setItems]= useState([]);
 
   const handleAddToWatchList = async (product, navigate,userEmail) => {
@@ -399,6 +470,7 @@ const AuthProvider = ({ children }) => {
         handleAddToWatchList,
         handleToggle,
         isDark,
+        handleWishDelete,
         
 
       }}

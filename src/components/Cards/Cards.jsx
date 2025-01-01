@@ -22,7 +22,7 @@ const Cards = ({ games }) => {
              <p> {game?.category}</p>
            
               <div className="card-actions justify-start">
-                <Link to={`/product-details/${game._id}`}>
+                <Link to={`/product-details/${game.title}`}>
                   <button className="btn btn-accent">Explore Details</button>
                 </Link><br/>
 

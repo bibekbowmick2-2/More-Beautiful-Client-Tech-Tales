@@ -3,7 +3,7 @@ import { ContextProvider } from '../AuthProviders/AuthProvider';
 import { Link } from 'react-router-dom';
 
 export default function GameWatchListData({items}) {
-  const {user} = useContext(ContextProvider);
+  const {user,handleWishDelete} = useContext(ContextProvider);
 
     if (!items || items.length === 0) {
         return (
@@ -53,11 +53,12 @@ export default function GameWatchListData({items}) {
             <td className='lg:font-extrabold'>{review?.shortDescription}</td>
             <td className='lg:font-extrabold'>{review?.category}</td>
           
-            <td><Link to={`/product-details/${review?._id}`}>
+            <td><Link to={`/product-details/${review.title}`}>
                   <button className="btn btn-accent">Details</button>
                 </Link>
                 </td>
-            <td><button className='btn btn-error'>Remove</button></td>
+            <td><button className='btn btn-error'  onClick={() => handleWishDelete(review?._id)}
+            >Remove</button></td>
           </tr>
         ))
       }

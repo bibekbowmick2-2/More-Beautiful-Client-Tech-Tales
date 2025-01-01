@@ -28,6 +28,7 @@ const GameWatchList = () => {
             throw new Error("Failed to fetch reviews");
           }
           const data = await response.json();
+          console.log(data);
           setItems(data);
 
           if(data){
@@ -46,7 +47,7 @@ const GameWatchList = () => {
     };
 
     fetchMyReviews();
-  }, [user]);
+  }, [user, items]);
     return (
         <div>
            {

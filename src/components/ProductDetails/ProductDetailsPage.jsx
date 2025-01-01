@@ -11,11 +11,11 @@ const ProductDetailsPage = () => {
 
   const  games = useLoaderData();
 
-  const { id } = useParams(); 
-  console.log(id);
+  const { title } = useParams(); 
+  console.log(title);
 
   // Find the specific product based on the ID
-  const product = games.find((game) => game._id === id);
+  const product = games.find((game) => game.title === title);
 
   if (!product) {
     return (

@@ -37,7 +37,7 @@ const router = createBrowserRouter([
             {
                 path: "/allReviews",
                 element: <AllReview/>,
-                  loader: () => fetch('https://game-server-woad.vercel.app/reviews'),
+                  loader: () => fetch('http://localhost:5000/reviews'),
                 
                  
             },
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
             {
                 path: "/myReviews",
                 element: <PrivateRoute><MyReview/></PrivateRoute>,
-                loader: () => fetch('https://game-server-woad.vercel.app/reviews'),
+                loader: () => fetch('http://localhost:5000/reviews'),
             },
             {
                 path: "/gameWatchList",
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
 
 
             {
-                path: "/product-details/:id",
+                path: "/product-details/:title",
                 element: <ProductDetailsPage/>,
                 loader: () => fetch('http://localhost:5000/'),
             },
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
               {
                 path: "/update/:id",
                 element: <PrivateRoute><UpdateReview/></PrivateRoute>,
-                loader: () => fetch(`https://game-server-woad.vercel.app/reviews`),
+                loader: () => fetch(`http://localhost:5000/reviews`),
               },
 
               {
