@@ -4,6 +4,8 @@ import caro2 from "../../assets/photo-1549189189-c26639dfc999.avif";
 import caro3 from "../../assets/premium_photo-1671485867703-3a9057260f4b.avif";
 import caro4 from "../../assets/photo-1670965247544-faebfc2bf09c.avif";
 import { Typewriter } from "react-simple-typewriter";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -27,7 +29,12 @@ const Banner = () => {
       >
         {slides.map((slide, index) => (
           <div key={index} className="w-full flex-shrink-0 relative ">
-            <img src={slide} alt={`Slide ${index}`} className="w-1/2 lg:w-auto h-full object-center object-cover " />
+            
+            <PhotoProvider>
+                        <PhotoView src={slide}>
+                        <img src={slide} alt={`Slide ${index}`} className="w-1/2 lg:w-auto h-full object-center object-cover " />
+                        </PhotoView>
+                      </PhotoProvider>
             <div className="absolute top-[50%] left-[75%] lg:left-[60%] transform -translate-x-1/2 -translate-y-1/2 text-white text-center w-1/2">
               <h1 className="text-2xl lg:text-5xl font-bold">
               Tech-Tales: A Bloging Application{" "}
