@@ -66,7 +66,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar bg-[#2489a0] ">
+    <div className="navbar bg-[#159bfc]  ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -92,7 +92,7 @@ const Header = () => {
             {link}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Tech-Tales</a>
+        <a className="btn btn-ghost text-xl  ">Tech-Tales</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{link}</ul>

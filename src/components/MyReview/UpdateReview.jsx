@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import dragonbg from "../../assets/dragonbg.jpg";
 import { ContextProvider } from "../AuthProviders/AuthProvider";
 import { useNavigate, Link, useLoaderData, useParams } from "react-router-dom";
+import Animation from "./Animation.json";
+import Lottie from "lottie-react";
 
 const UpdateReview = () => {
    const { handleUpdateReview,loading} = useContext(ContextProvider);
@@ -46,27 +48,18 @@ if (!product) {
          backgroundColor: '#080325',
        
     }}
-      className="min-h-[1150px] pt-[30px] px-4 lg:min-h-[1100px] lg:pt-[30px] relative"
+      className="grid grid-cols-1 md:grid-cols-2 justify-center items-center   lg:grid-cols-2 py-10    min-h-[1150px] pt-[30px] px-4 lg:min-h-[1100px] lg:pt-[30px]  "
     >
-      <div className=" hero opacity-90 bg-base-200 w-11/12  lg:max-w-md absolute lg:right-[200px] rounded-xl">
+<div className="sticky top-0">
+<Lottie   animationData={Animation} loop={true} className="max-w-[800px] " />
+</div>
+
+      <div className=" hero opacity-90 bg-base-200 max-w-[400px]  lg:max-w-md lg:right-[200px] rounded-xl mt-10">
         <div className="hero-content max-w-sm flex-col">
           <h1 className="text-3xl">Update Your Review</h1>
-          <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
+          <div className="card bg-base-100 w-full shrink-0 shadow-2xl ">
             <form className="card-body max-w-md mx-auto lg:max-w-6xl" onSubmit={handleFormSubmit} >
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">User Name</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="name"
-                  name="name"
-                  className="input input-bordered w-64"
-                  defaultValue= {product.name}
-                   readOnly
-                  required
-                />
-              </div>
+              
 
               <input type="hidden" name="id" value={product._id} />
 
@@ -75,7 +68,7 @@ if (!product) {
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text"> Game Title/ Name</span>
+                  <span className="label-text"> Blog Title/ Name</span>
                 </label>
                 <input
                   type="text"
@@ -109,67 +102,59 @@ if (!product) {
                   type="url"
                   placeholder="photo"
                   name="thumbnail"
-                  defaultValue={product.thumbnail}
+                  defaultValue={product?.image}
                   className="input input-bordered"
                   required
                 />
               </div>
 
+              
+
+              
+
+
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Rating(e.g., 1-5 or 1-10) </span>
+                  <span className="label-text"> Description(L)</span>
                 </label>
-                <input
-                  type="number"
-                  placeholder="Rating"
-                  name="rating"
-                  defaultValue={product.rating}
-                  className="input input-bordered"
+
+                <textarea
+                  type="text"
+                  placeholder="Long Description"
+                  name="longdescription"
+                  className="input input-bordered w-64 h-16"
+                  defaultValue={product.longDescription}
                   required
                 />
               </div>
 
+
+
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">
-                    Publishing year: (Ex: 2021, 2024){" "}
-                  </span>
+                  <span className="label-text"> Description(S)</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Publishing year"
-                  name="publishing_year"
-                  defaultValue={product.publishing_year}
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-
-
-
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text"> Game Description</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Game Description"
-                  name="description"
-                  defaultValue={product.description}
+                  placeholder="Short Description"
+                  name="shortdescription"
                   className="input input-bordered w-64"
+                  defaultValue={product.shortDescription}
                   required
                 />
               </div>
 
-              <select name="genre" defaultValue={product.genre}   class="select select-primary w-full max-w-xs">
+              <select name="genre" defaultValue={product.category}   class="select select-primary w-full max-w-xs">
 
                 <option disabled selected>
 
-                Genres ?
+                Category
                 </option>
-                <option>Action</option>
-                <option>RPG</option>
-                <option>Adventure</option>
+                <option>Technology</option>
+                <option>Lifestyle</option>
+                <option>Travel</option>
+                <option>Food</option>
+                <option>Health</option>
                 
               </select>
 

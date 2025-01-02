@@ -21,6 +21,10 @@ export default {
       },
     },
   },
+
+  fontFamily: {
+    helvetica: ['Helvetica Neue', 'sans-serif'], // Add Helvetica Neue
+  },
   plugins: [daisyui, flowbite.plugin(),],
 };
 

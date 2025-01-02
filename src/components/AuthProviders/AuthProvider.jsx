@@ -101,13 +101,11 @@ const AuthProvider = ({ children }) => {
     e.preventDefault();
     setLoading(true);
     const form = e.target;
-    const name = form.name.value;
     const title = form.title.value;
     const email = form.email.value;
     const thumbnail = form.thumbnail.value;
-    const rating = form.rating.value;
-    const publishing_year = form.publishing_year.value;
-    const description = form.description.value;
+    const longdescription = form.longdescription.value;
+    const shortdescription = form.shortdescription.value;
     const genre = form.genre.value;
     const id = form.id.value;
     console.log(id);
@@ -116,15 +114,13 @@ const AuthProvider = ({ children }) => {
    
 
     const reviews = {
-      name,
+     
       title,
       email,
       thumbnail,
-      rating,
-      publishing_year,
-      description,
+      longdescription,
+      shortdescription,
       genre,
-      id
     };
 
     fetch(`http://localhost:5000/update-reviews/${id}`, {
