@@ -78,7 +78,7 @@ const AuthProvider = ({ children }) => {
       genre,
     };
 
-    fetch("https://game-server-woad.vercel.app/reviews", {
+    fetch("https://game-server-woad.vercel.app/blogs", {
       method: "POST",
       headers: {
         "content-type": "application/json",
