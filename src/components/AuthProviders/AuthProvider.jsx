@@ -56,29 +56,27 @@ const AuthProvider = ({ children }) => {
     e.preventDefault();
     setLoading(true);
     const form = e.target;
-    const name = form.name.value;
+    // const name = form.name.value;
     const title = form.title.value;
     const email = form.email.value;
     const thumbnail = form.thumbnail.value;
-    const rating = form.rating.value;
-    const publishing_year = form.publishing_year.value;
-    const description = form.description.value;
+    const longdescription = form.longdescription.value;
+    const shortdescription = form.shortdescription.value;
     const genre = form.genre.value;
 
    
 
     const reviews = {
-      name,
+     
       title,
       email,
       thumbnail,
-      rating,
-      publishing_year,
-      description,
+      longdescription,
+      shortdescription,
       genre,
     };
 
-    fetch("https://game-server-woad.vercel.app/blogs", {
+    fetch("http://localhost:5000/blogs", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -89,7 +87,7 @@ const AuthProvider = ({ children }) => {
       .then((data) => {
         if (data.insertedId) {
           setLoading(false);
-          toast.success("Review added successfully");
+          toast.success("Blog added successfully");
           navigate("/allReviews");
          
         }
@@ -129,7 +127,7 @@ const AuthProvider = ({ children }) => {
       id
     };
 
-    fetch(`https://game-server-woad.vercel.app/update-reviews/${id}`, {
+    fetch(`http://localhost:5000/update-reviews/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -279,7 +277,7 @@ const AuthProvider = ({ children }) => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`https://game-server-woad.vercel.app/my-review1/${id}`, {
+          fetch(`http://localhost:5000/my-review1/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -403,7 +401,7 @@ const AuthProvider = ({ children }) => {
 
     try{
       const updatedProduct = { ...product, email: userEmail };
-      const response = await fetch('https://game-server-woad.vercel.app/watchlist', {
+      const response = await fetch('http://localhost:5000/watchlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

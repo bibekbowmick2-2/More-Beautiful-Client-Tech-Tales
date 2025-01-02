@@ -16,18 +16,20 @@ const AddReview = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "bottom center",
+    
+       
         
       }}
       className="min-h-[1200px] pt-[30px] px-4 lg:min-h-[1100px] lg:pt-[30px] relative"
     >
-      <div className=" hero opacity-90 bg-base-200 w-11/12  lg:max-w-md absolute lg:right-[200px] rounded-xl">
+      <div className=" hero opacity-90 bg-base-200 w-11/12  lg:max-w-md absolute lg:right-[200px] rounded-xl ">
         <div className="hero-content max-w-sm flex-col">
-          <h1 className="text-3xl">Add Your Review</h1>
+          <h1 className="text-3xl ">Add Blog</h1>
           <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
             <form className="card-body max-w-md mx-auto lg:max-w-6xl" onSubmit={handleFormSubmit}>
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
-                  <span className="label-text">User Name</span>
+                  <span className="label-text ">User Name</span>
                 </label>
                 <input
                   type="text"
@@ -38,11 +40,11 @@ const AddReview = () => {
                   readOnly
                   required
                 />
-              </div>
+              </div> */}
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text"> Game Title/ Name</span>
+                  <span className="label-text"> Blog Title/ Name</span>
                 </label>
                 <input
                   type="text"
@@ -80,30 +82,20 @@ const AddReview = () => {
                 />
               </div>
 
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Rating(e.g., 1-5 or 1-10) </span>
-                </label>
-                <input
-                  type="number"
-                  placeholder="Rating"
-                  name="rating"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
+              
+
+
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">
-                    Publishing year: (Ex: 2021, 2024){" "}
-                  </span>
+                  <span className="label-text"> Description(L)</span>
                 </label>
-                <input
+
+                <textarea
                   type="text"
-                  placeholder="Publishing year"
-                  name="publishing_year"
-                  className="input input-bordered"
+                  placeholder="Long Description"
+                  name="longdescription"
+                  className="input input-bordered w-64 h-16"
                   required
                 />
               </div>
@@ -112,24 +104,27 @@ const AddReview = () => {
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text"> Game Description</span>
+                  <span className="label-text"> Description(S)</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Game Description"
-                  name="description"
+                  placeholder="Short Description"
+                  name="shortdescription"
                   className="input input-bordered w-64"
                   required
                 />
               </div>
 
               <select name="genre" class="select select-primary w-full max-w-xs">
+            
                 <option disabled selected>
-                
+                Select a Category
                 </option>
-                <option>Action</option>
-                <option>RPG</option>
-                <option>Adventure</option>
+                <option>Technology</option>
+                <option>Lifestyle</option>
+                <option>Travel</option>
+                <option>Food</option>
+                <option>Health</option>
                 
               </select>
 
