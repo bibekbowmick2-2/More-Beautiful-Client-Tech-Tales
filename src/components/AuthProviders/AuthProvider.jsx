@@ -283,21 +283,21 @@ const AuthProvider = ({ children }) => {
                 console.log("deleted");
                 swalWithBootstrapButtons.fire({
                   title: "Deleted!",
-                  text: "Your Review has been deleted.",
+                  text: "Your Blog has been deleted.",
                   icon: "success",
 
 
                   
                 });
 
-                setReviews((prevReviews) =>
-                  prevReviews.filter((review) => review._id !== id)
-                );
+                // setReviews((prevReviews) =>
+                //   prevReviews.filter((review) => review._id !== id)
+                // );
 
               } else {
                 swalWithBootstrapButtons.fire({
                   title: "Error!",
-                  text: "Could not delete the review.",
+                  text: "Could not delete the blog.",
                   icon: "error",
                 });
               }
@@ -366,13 +366,13 @@ const AuthProvider = ({ children }) => {
               } else {
                 swalWithBootstrapButtons.fire({
                   title: "Error!",
-                  text: "Could not delete the review.",
+                  text: "Could not delete the blog.",
                   icon: "error",
                 });
               }
             })
             .catch((error) => {
-              console.error("Error deleting review:", error);
+              console.error("Error deleting blog:", error);
             });
         } else if (
           /* Read more about handling dismissals below */

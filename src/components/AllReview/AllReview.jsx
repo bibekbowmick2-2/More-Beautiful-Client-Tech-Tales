@@ -12,16 +12,54 @@ const AllReview = () => {
     
   const loaderData = useLoaderData(); 
   const [reviews, setReviews] = React.useState(loaderData);
+  const [error, setError] = useState("");
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (loaderData) {
+  //       setLoading(false);
+  //       setReviews(loaderData);
+  //     }
+     
+  //   }, 1500);
+  //   return () => clearTimeout(timer);
+  // }, [reviews]);
+
+
+
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (loaderData) {
-        setLoading(false);
+    const fetchMyReviews = async () => {
+      // if (!user?.email) return;
+
+      try {
+        const timeoutId = setTimeout(async () => {
+          const response = await fetch(`http://localhost:5000/blogs`);
+          // console.log(user.email);
+          if (!response.ok) {
+            throw new Error("Failed to fetch reviews");
+          }
+          const data = await response.json();
+          console.log(data);
+          setReviews(data);
+
+          if(data){
+            setLoading(false);
+
+          }
+        }, 2000); // 1500 milliseconds delay
+
+        return () => clearTimeout(timeoutId); // Cleanup timeout on unmount
+      } catch (err) {
+        setError(err.message);
       }
-     
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
+
+      
+      
+    };
+
+    fetchMyReviews();
+  }, [reviews]);
 
 
 
