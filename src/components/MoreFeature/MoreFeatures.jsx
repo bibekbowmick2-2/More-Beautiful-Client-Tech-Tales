@@ -1,6 +1,54 @@
 import React from 'react';
 import dragonbg from '../../assets/Homebg.jpg'
+import { motion, useAnimation } from "motion/react"
+
+
 const MoreFeatures = () => {
+    const firstAnimation = useAnimation();
+    const secondAnimation = useAnimation();
+    const thirdAnimation = useAnimation();
+    React.useEffect(() => {
+        async function runSequence() {
+          while (true) {
+            await firstAnimation.start({
+              scale: 2,
+              rotate: 360,
+              transition: { duration: 2 },
+             
+              
+
+
+            });
+            await secondAnimation.start({
+              scale: 2,
+              rotate: 360,
+              transition: { duration: 2 },
+            
+              
+            });
+
+            await thirdAnimation.start({
+                scale: 2,
+                rotate: 360,
+                transition: { duration: 2 },
+                
+              });
+
+             
+              
+              await thirdAnimation.start({
+                  scale: 1,
+              });
+              await secondAnimation.start({
+                scale: 1,
+            });
+            await firstAnimation.start({
+                scale: 1,
+            });
+          }
+        }
+        runSequence();
+      }, [firstAnimation, secondAnimation,thirdAnimation]);
     return (
         <div style={{
             backgroundImage: `url(${dragonbg})`, backgroundRepeat: 'no-repeat',
@@ -12,24 +60,24 @@ const MoreFeatures = () => {
             <div className="bg-[#0000008a] h-full w-full pt-10">
                 <h1 className='text-3xl text-center text-white'>A Bit More Features</h1>
                 <div className=' grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 py-10 gap-5'>
-                    <div style={{backgroundColor: '#341313'}}  className="card  text-neutral-content w-[300px] lg:w-[300px] lg:-skew-y-12 mx-auto rounded-none">
+                    <motion.div   animate={firstAnimation} style={{backgroundColor: '#341313'}}  className="card  text-neutral-content w-[300px] lg:w-[300px] lg:-skew-y-12 mx-auto rounded-none">
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">Comment System</h2>
                             <p>Enable readers to leave comments on posts. Include moderation features.</p>
                         </div>
-                    </div>
-                    <div style={{backgroundColor: '#341313'}} className="card  text-neutral-content w-[300px] lg:w-[300px]  mx-auto rounded-none">
+                    </motion.div>
+                    <motion.div  animate={secondAnimation} style={{backgroundColor: '#341313'}} className="card  text-neutral-content w-[300px] lg:w-[300px]  mx-auto rounded-none">
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">SEO Optimization</h2>
                             <p>Add meta titles and keywords for better visibility on search engines.</p>
                         </div>
-                    </div>
-                    <div style={{backgroundColor: '#341313'}} className="card text-neutral-content w-[300px] lg:w-[300px] lg:skew-y-12 mx-auto rounded-none">
+                    </motion.div>
+                    <motion.div animate={thirdAnimation} style={{backgroundColor: '#341313'}} className="card text-neutral-content w-[300px] lg:w-[300px] lg:skew-y-12 mx-auto rounded-none">
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">AJAX Contact Form</h2>
                             <p>Everyone can contact you through user friendly ajax form.</p>
                         </div>
-                    </div>
+                    </motion.div>
                     
                 </div>
             </div>
