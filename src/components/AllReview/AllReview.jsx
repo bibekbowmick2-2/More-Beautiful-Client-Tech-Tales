@@ -14,16 +14,6 @@ const AllReview = () => {
   const [reviews, setReviews] = React.useState(loaderData);
   const [error, setError] = useState("");
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (loaderData) {
-  //       setLoading(false);
-  //       setReviews(loaderData);
-  //     }
-     
-  //   }, 1500);
-  //   return () => clearTimeout(timer);
-  // }, [reviews]);
 
 
 
@@ -31,6 +21,7 @@ const AllReview = () => {
   useEffect(() => {
     const fetchMyReviews = async () => {
       // if (!user?.email) return;
+      
 
       try {
         const timeoutId = setTimeout(async () => {
@@ -40,7 +31,7 @@ const AllReview = () => {
             throw new Error("Failed to fetch reviews");
           }
           const data = await response.json();
-          console.log(data);
+          console.log(typeof(data));
           setReviews(data);
 
           if(data){
@@ -59,7 +50,7 @@ const AllReview = () => {
     };
 
     fetchMyReviews();
-  }, [reviews]);
+  },[]);
 
 
 

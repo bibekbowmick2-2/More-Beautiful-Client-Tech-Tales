@@ -11,26 +11,31 @@ const MoreFeatures = () => {
         async function runSequence() {
           while (true) {
             await firstAnimation.start({
-              scale: 2,
+              scale: 1.5,
               rotate: 360,
-              transition: { duration: 2 },
+              transition: { duration:  1.5},
+              transitionDelay: 2,
+              backgroundColor: 'blue',
+              
              
               
 
 
             });
             await secondAnimation.start({
-              scale: 2,
+              scale: 1.5,
               rotate: 360,
-              transition: { duration: 2 },
+              transition: { duration: 1.5 },
+              backgroundColor: 'blue',
             
               
             });
 
             await thirdAnimation.start({
-                scale: 2,
+                scale: 1.5,
                 rotate: 360,
-                transition: { duration: 2 },
+                transition: { duration: 1.5 },
+                backgroundColor: 'blue',
                 
               });
 
@@ -38,12 +43,18 @@ const MoreFeatures = () => {
               
               await thirdAnimation.start({
                   scale: 1,
+                  transition: { duration: 1 },
+                  backgroundColor: '#341313',
               });
               await secondAnimation.start({
                 scale: 1,
+                transition: { duration: 1 },
+                backgroundColor: '#341313',
             });
             await firstAnimation.start({
                 scale: 1,
+                transition: { duration: 1 },
+                backgroundColor: '#341313',
             });
           }
         }

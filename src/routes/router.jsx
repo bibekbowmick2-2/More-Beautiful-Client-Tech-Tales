@@ -46,15 +46,20 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "/myReviews",
-        element: (
-          <PrivateRoute>
-            <MyReview />
-          </PrivateRoute>
-        ),
-        loader: () => fetch("http://localhost:5000/blogs"),
-      },
+
+
+
+    //   {
+    //     path: "/myReviews",
+    //     element: (
+    //       <PrivateRoute>
+    //         <MyReview />
+    //       </PrivateRoute>
+    //     ),
+    //     loader: () => fetch("http://localhost:5000/blogs"),
+    //   },
+
+
       {
         path: "/gameWatchList",
         element: (

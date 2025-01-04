@@ -12,6 +12,7 @@ body{
 .card1-wrapper{
     max-width: 1100px;
     margin: 0 auto;
+    min-height: fit-content;
 }
 img{
     max-width: 100%;

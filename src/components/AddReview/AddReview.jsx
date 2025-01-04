@@ -48,7 +48,7 @@ const AddReview = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Game Title"
+                  placeholder="Blog Title"
                   name="title"
                   className="input input-bordered w-64"
                   required

@@ -1,20 +1,35 @@
 import React, { useContext, useEffect, useState } from "react";
 import Card1 from "../../assets/Card-1 (2).png";
 import { ContextProvider } from "../AuthProviders/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 const Card = ({ reviews }) => {
+  
   const { user, handleDelete,handleAddToWatchList } = useContext(ContextProvider);
   const [query, setQuery] = useState('');
   const [error, setError] = useState('');
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState([reviews]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  console.log(typeof(reviews));
 
 
  useEffect(() => {
   setResults(reviews);
 
- },[reviews]);
+ },[]);
+
+
+// useEffect(() => {
+//   if (Array.isArray(reviews)) {
+//     setResults(reviews);
+//   } else {
+//     alert("Invalid data format: Reviews should be an array.");
+//     console.error("Invalid data format: Reviews should be an array.");
+//   }
+
+
+//  },[reviews]);
   
 
   if (!results || results.length === 0) {
@@ -24,6 +39,9 @@ const Card = ({ reviews }) => {
       </p>
     );
   }
+
+
+ 
 
 
   const handleSearch = async (e) => {
@@ -86,13 +104,13 @@ const Card = ({ reviews }) => {
         <div key={index} className="card w-11/12 mx-auto">
           <div class="avatar">
             <div class="w-12">
-              <img src={review?.image} alt="" />
+              <img src={review?.image} alt="BKB" />
             </div>
           </div>
 
           <p className="">{review?.title}</p>
           <div className="card__content ">
-            <p>{review?.shortDescription}</p>
+          <p>{review?.shortDescription || "Short description not available"}</p>
            
 
             <span>
@@ -100,8 +118,8 @@ const Card = ({ reviews }) => {
             </span>
           </div>
           <div className="card__details">
-            <p>{review?.longDescription}</p><br/>
-            <p>{review?.category}</p>
+          <p>{review?.longDescription || "Long description not available"}</p>
+          <p>{review?.category || "Category not specified"}</p>
 
 
             <div className="flex gap-2 ">

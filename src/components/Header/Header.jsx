@@ -47,9 +47,9 @@ const Header = () => {
           <li>
             <NavLink to="/addReviews">Add Blogs</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/myReviews">My Review</NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink to="/gameWatchList">WishList</NavLink>
           </li>
@@ -121,7 +121,7 @@ const Header = () => {
               content=<>
                 <div class="avatar z-10">
                   <div class="w-24 rounded-full">
-                    <img src={user.photoURL} />
+                    <img src={user?.photoURL.replace(/"/g, "")} />
                   </div>
                 </div>
 

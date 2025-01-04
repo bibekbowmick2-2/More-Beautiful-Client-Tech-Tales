@@ -445,6 +445,39 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+
+// Comment Section
+  const handleComment = (e,navigate,id) => {
+    e.preventDefault();
+ 
+    const comment = e.target.comment.value;
+    const comment_information = {
+      comment,
+      email: user?.email,
+      displayName: user?.displayName,
+      photoURL: user?.photoURL.replace(/"/g, ""),
+      productId: id,
+
+
+    }
+   
+    fetch(`http://localhost:5000/comment`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(comment_information),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("Comment added successfully");
+          // navigate("/gameWatchList");
+        }
+      })
+
+  };
+
   return (
     <ContextProvider.Provider
       value={{
@@ -465,6 +498,7 @@ const AuthProvider = ({ children }) => {
         handleToggle,
         isDark,
         handleWishDelete,
+        handleComment
         
 
       }}
