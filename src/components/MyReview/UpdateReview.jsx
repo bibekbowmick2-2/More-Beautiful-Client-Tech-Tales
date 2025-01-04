@@ -102,7 +102,7 @@ if (!product) {
                   type="url"
                   placeholder="photo"
                   name="thumbnail"
-                  defaultValue={product?.image}
+                  defaultValue={product.image}
                   className="input input-bordered"
                   required
                 />

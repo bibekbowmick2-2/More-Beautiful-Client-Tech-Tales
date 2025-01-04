@@ -103,7 +103,7 @@ const AuthProvider = ({ children }) => {
     const form = e.target;
     const title = form.title.value;
     const email = form.email.value;
-    const thumbnail = form.thumbnail.value;
+    const image = form.thumbnail.value;
     const longdescription = form.longdescription.value;
     const shortdescription = form.shortdescription.value;
     const genre = form.genre.value;
@@ -117,7 +117,7 @@ const AuthProvider = ({ children }) => {
      
       title,
       email,
-      thumbnail,
+      image,
       longdescription,
       shortdescription,
       genre,

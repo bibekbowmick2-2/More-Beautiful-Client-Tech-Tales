@@ -38,7 +38,7 @@ const AllReview = () => {
             setLoading(false);
 
           }
-        }, 2000); // 1500 milliseconds delay
+        }, 1000); // 1500 milliseconds delay
 
         return () => clearTimeout(timeoutId); // Cleanup timeout on unmount
       } catch (err) {

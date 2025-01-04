@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./ProductDetailsPage.css";
 import dragonbg from '../../assets/shoe_1.jpg'
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { ContextProvider } from "../AuthProviders/AuthProvider";
 
 const ProductDetailsPage = () => {
@@ -21,7 +21,7 @@ const ProductDetailsPage = () => {
   if (!product) {
     return (
       <div className="container mx-auto py-10 text-center text-red-500">
-        <h1>Product Not Found</h1>
+        <h1>Blog Not Found</h1>
       </div>
     );
   }
@@ -112,6 +112,16 @@ const ProductDetailsPage = () => {
               
             </ul>
           </div>
+
+          {user?.email === product?.email && (
+              <div className="flex gap-14">
+                <Link to={`/update/${product._id}`} className="btn btn-primary">
+                  Update
+                </Link>
+
+                
+              </div>
+            )}
 
           <div className="purchase-info">
             <input type="number" min="0" value="1" />
