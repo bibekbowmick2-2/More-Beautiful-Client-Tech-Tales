@@ -17,7 +17,7 @@ const Card = ({ reviews }) => {
  useEffect(() => {
   setResults(reviews);
 
- },[]);
+ },[reviews]);
 
 
 // useEffect(() => {

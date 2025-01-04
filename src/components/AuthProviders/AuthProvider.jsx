@@ -58,22 +58,22 @@ const AuthProvider = ({ children }) => {
     const form = e.target;
     // const name = form.name.value;
     const title = form.title.value;
+    const image = form.thumbnail.value;
+    const shortDescription = form.shortdescription.value;
+    const longDescription = form.longdescription.value;
+    const category = form.genre.value;
     const email = form.email.value;
-    const thumbnail = form.thumbnail.value;
-    const longdescription = form.longdescription.value;
-    const shortdescription = form.shortdescription.value;
-    const genre = form.genre.value;
 
    
 
     const reviews = {
      
       title,
+      image,
+      shortDescription,
+      longDescription,
+      category,
       email,
-      thumbnail,
-      longdescription,
-      shortdescription,
-      genre,
     };
 
     fetch("http://localhost:5000/blogs", {

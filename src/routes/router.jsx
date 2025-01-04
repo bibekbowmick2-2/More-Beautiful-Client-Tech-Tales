@@ -80,7 +80,9 @@ const router = createBrowserRouter([
 
       {
         path: "/product-details/:title",
-        element: <ProductDetailsPage />,
+        element:  <PrivateRoute>
+          <ProductDetailsPage />
+        </PrivateRoute>,
         loader: () => fetch("http://localhost:5000/"),
       },
 
