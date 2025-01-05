@@ -56,7 +56,7 @@ const Card = ({ reviews }) => {
     setError('');
     setLoading(true);
     try {
-      const response = await axios.get(`https://game-server-woad.vercel.app/search?q=${query}`,{
+      const response = await axios.get(`https://server-tech-tales.vercel.app/search?q=${query}`,{
         timeout: 8000,
       });
       setResults(response.data);

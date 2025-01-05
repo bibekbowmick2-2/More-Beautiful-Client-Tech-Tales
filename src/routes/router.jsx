@@ -24,19 +24,19 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("https://game-server-woad.vercel.app/"),
+        loader: () => fetch("https://server-tech-tales.vercel.app/"),
       },
 
       {
         path: "/home",
         element: <Home />,
-        loader: () => fetch("https://game-server-woad.vercel.app/"),
+        loader: () => fetch("https://server-tech-tales.vercel.app/"),
       },
 
       {
         path: "/allReviews",
         element: <AllReview />,
-        loader: () => fetch("https://game-server-woad.vercel.app/blogs"),
+        loader: () => fetch("https://server-tech-tales.vercel.app/blogs"),
       },
       {
         path: "/addReviews",
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
             <GameWatchList />
           </PrivateRoute>
         ),
-        loader: () => fetch("https://game-server-woad.vercel.app/watchlist"),
+        loader: () => fetch("https://server-tech-tales.vercel.app/watchlist"),
       },
       {
         path: "/login",
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
       {
         path: "/product-details/:title",
         element:  <PrivateRoute><ProductDetailsPage /></PrivateRoute>,
-        loader: () => fetch("https://game-server-woad.vercel.app/blogs"),
+        loader: () => fetch("https://server-tech-tales.vercel.app/blogs"),
       },
 
       {
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
             <UpdateReview />
           </PrivateRoute>
         ),
-        loader: () => fetch(`https://game-server-woad.vercel.app/blogs`),
+        loader: () => fetch(`https://server-tech-tales.vercel.app/blogs`),
       },
 
       {
@@ -98,7 +98,7 @@ const router = createBrowserRouter([
       {
         path: "/unique",
         element: <UniqueTable/>,
-        loader: () => fetch("https://game-server-woad.vercel.app/blogs"),
+        loader: () => fetch("https://server-tech-tales.vercel.app/blogs"),
       },
 
 

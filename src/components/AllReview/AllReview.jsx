@@ -25,7 +25,7 @@ const AllReview = () => {
 
       try {
         const timeoutId = setTimeout(async () => {
-          const response = await fetch(`https://game-server-woad.vercel.app/blogs`);
+          const response = await fetch(`https://server-tech-tales.vercel.app/blogs`);
           // console.log(user.email);
           if (!response.ok) {
             throw new Error("Failed to fetch reviews");
