@@ -8,7 +8,7 @@ const Card = ({ reviews }) => {
   const { user, handleDelete,handleAddToWatchList } = useContext(ContextProvider);
   const [query, setQuery] = useState('');
   const [error, setError] = useState('');
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(reviews);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   console.log(typeof(reviews));

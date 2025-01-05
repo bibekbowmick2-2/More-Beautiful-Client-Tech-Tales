@@ -3,10 +3,31 @@
 
 # Project Name: Tech-Tales: A Blog Application
 # Project Category: 05
-# Live Site Link: 
+# Live Site Link: http://closed-brother.surge.sh/
 
 
+### NPM Packages Used:
 
+  - "@tanstack/react-table"
+   - "antd"
+   - "axios"
+   - "firebase"
+  -  "flowbite-react"
+   - "lottie-react"
+    - "moment"
+   - "motion"
+   - "react"
+   - "react-data-table-component"
+   - "react-dom"
+   - "react-helmet-async"
+   - "react-loading-skeleton"
+   - "react-photo-view"
+   - "react-router-dom"
+   - "react-simple-typewriter"
+   - "react-toastify"
+   - "react-tooltip"
+    - "surge"
+    - "sweetalert2"
 
 
 
@@ -24,3 +45,8 @@
 - Wishlist Functionality: Users can save blogs or articles to a 'WishList' for easy access later. This feature allows readers to curate their personal list of interesting content they wish to explore further.
 
 - These features collectively create a comprehensive and user-friendly blogging platform for both content creators and readers.
+
+
+### Blog Website
+# Welcome to the Blog Website Development project! We're seeking a talented Front-End Developer to help bring our next-generation blog website to life. This exciting project will allow you to design and implement beautiful, responsive web pages, collaborating with designers and back-end developers. The project involves creating a dynamic, user-friendly experience for visitors, using modern technologies like React and Firebase.
+

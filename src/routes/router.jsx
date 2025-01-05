@@ -7,7 +7,6 @@ import FAQ from "../components/FAQ";
 import GameWatchList from "../components/GameWatchList/GameWatchList";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
-import MyReview from "../components/MyReview/MyReview";
 import UpdateReview from "../components/MyReview/UpdateReview";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import ProductDetailsPage from "../components/ProductDetails/ProductDetailsPage";

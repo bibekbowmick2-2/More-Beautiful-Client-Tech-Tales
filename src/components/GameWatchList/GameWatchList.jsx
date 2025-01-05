@@ -47,7 +47,7 @@ const GameWatchList = () => {
     };
 
     fetchMyReviews();
-  }, [user, items]);
+  }, [ items]);
     return (
         <div>
            {

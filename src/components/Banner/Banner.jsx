@@ -11,12 +11,12 @@ const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [caro1, caro2, caro3, caro4];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 3000); // Change slide every 3 seconds
-    return () => clearInterval(interval);
-  }, [slides.length]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+  //   }, 1500); 
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div className="relative mx-auto w-full h-[400px] md:h-[400px] lg:h-[600px] lg:max-w-11/12 overflow-hidden">

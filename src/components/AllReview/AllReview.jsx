@@ -13,6 +13,7 @@ const AllReview = () => {
   const loaderData = useLoaderData(); 
   const [reviews, setReviews] = React.useState(loaderData);
   const [error, setError] = useState("");
+  console.log(loading);
 
 
 
@@ -119,6 +120,7 @@ const AllReview = () => {
         </div>
 
         {loading ? (
+          
          
           <Skeleton count={reviews.length} height={300} width={600}  borderRadius={15}  baseColor="#bab4b2" className="w-full mb-4" />
           

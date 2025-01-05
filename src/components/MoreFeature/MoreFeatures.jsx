@@ -7,59 +7,59 @@ const MoreFeatures = () => {
     const firstAnimation = useAnimation();
     const secondAnimation = useAnimation();
     const thirdAnimation = useAnimation();
-    React.useEffect(() => {
-        async function runSequence() {
-          while (true) {
-            await firstAnimation.start({
-              scale: 1.5,
-              rotate: 360,
-              transition: { duration:  1.5},
-              transitionDelay: 2,
-              backgroundColor: 'blue',
+    // React.useEffect(() => {
+    //     async function runSequence() {
+    //       while (true) {
+    //         await firstAnimation.start({
+    //           scale: 1.5,
+    //           rotate: 360,
+    //           transition: { duration:  1.5},
+    //           transitionDelay: 2,
+    //           backgroundColor: 'blue',
               
              
               
 
 
-            });
-            await secondAnimation.start({
-              scale: 1.5,
-              rotate: 360,
-              transition: { duration: 1.5 },
-              backgroundColor: 'blue',
+    //         });
+    //         await secondAnimation.start({
+    //           scale: 1.5,
+    //           rotate: 360,
+    //           transition: { duration: 1.5 },
+    //           backgroundColor: 'blue',
             
               
-            });
+    //         });
 
-            await thirdAnimation.start({
-                scale: 1.5,
-                rotate: 360,
-                transition: { duration: 1.5 },
-                backgroundColor: 'blue',
+    //         await thirdAnimation.start({
+    //             scale: 1.5,
+    //             rotate: 360,
+    //             transition: { duration: 1.5 },
+    //             backgroundColor: 'blue',
                 
-              });
+    //           });
 
              
               
-              await thirdAnimation.start({
-                  scale: 1,
-                  transition: { duration: 1 },
-                  backgroundColor: '#341313',
-              });
-              await secondAnimation.start({
-                scale: 1,
-                transition: { duration: 1 },
-                backgroundColor: '#341313',
-            });
-            await firstAnimation.start({
-                scale: 1,
-                transition: { duration: 1 },
-                backgroundColor: '#341313',
-            });
-          }
-        }
-        runSequence();
-      }, [firstAnimation, secondAnimation,thirdAnimation]);
+    //           await thirdAnimation.start({
+    //               scale: 1,
+    //               transition: { duration: 1 },
+    //               backgroundColor: '#341313',
+    //           });
+    //           await secondAnimation.start({
+    //             scale: 1,
+    //             transition: { duration: 1 },
+    //             backgroundColor: '#341313',
+    //         });
+    //         await firstAnimation.start({
+    //             scale: 1,
+    //             transition: { duration: 1 },
+    //             backgroundColor: '#341313',
+    //         });
+    //       }
+    //     }
+    //     runSequence();
+    //   }, []);
     return (
         <div style={{
             backgroundImage: `url(${dragonbg})`, backgroundRepeat: 'no-repeat',
