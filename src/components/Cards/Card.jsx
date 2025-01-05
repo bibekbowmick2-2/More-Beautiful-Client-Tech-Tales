@@ -8,7 +8,7 @@ const Card = ({ reviews }) => {
   const { user, handleDelete,handleAddToWatchList } = useContext(ContextProvider);
   const [query, setQuery] = useState('');
   const [error, setError] = useState('');
-  const [results, setResults] = useState([reviews]);
+  const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   console.log(typeof(reviews));
@@ -56,7 +56,7 @@ const Card = ({ reviews }) => {
     setError('');
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5000/search?q=${query}`,{
+      const response = await axios.get(`https://game-server-woad.vercel.app/search?q=${query}`,{
         timeout: 8000,
       });
       setResults(response.data);

@@ -24,19 +24,19 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/"),
+        loader: () => fetch("https://game-server-woad.vercel.app/"),
       },
 
       {
         path: "/home",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/"),
+        loader: () => fetch("https://game-server-woad.vercel.app/"),
       },
 
       {
         path: "/allReviews",
         element: <AllReview />,
-        loader: () => fetch("http://localhost:5000/blogs"),
+        loader: () => fetch("https://game-server-woad.vercel.app/blogs"),
       },
       {
         path: "/addReviews",
@@ -49,16 +49,6 @@ const router = createBrowserRouter([
 
 
 
-    //   {
-    //     path: "/myReviews",
-    //     element: (
-    //       <PrivateRoute>
-    //         <MyReview />
-    //       </PrivateRoute>
-    //     ),
-    //     loader: () => fetch("http://localhost:5000/blogs"),
-    //   },
-
 
       {
         path: "/gameWatchList",
@@ -67,7 +57,7 @@ const router = createBrowserRouter([
             <GameWatchList />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/watchlist"),
+        loader: () => fetch("https://game-server-woad.vercel.app/watchlist"),
       },
       {
         path: "/login",
@@ -81,7 +71,7 @@ const router = createBrowserRouter([
       {
         path: "/product-details/:title",
         element:  <PrivateRoute><ProductDetailsPage /></PrivateRoute>,
-        loader: () => fetch("http://localhost:5000/blogs"),
+        loader: () => fetch("https://game-server-woad.vercel.app/blogs"),
       },
 
       {
@@ -96,7 +86,7 @@ const router = createBrowserRouter([
             <UpdateReview />
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:5000/blogs`),
+        loader: () => fetch(`https://game-server-woad.vercel.app/blogs`),
       },
 
       {
@@ -108,7 +98,7 @@ const router = createBrowserRouter([
       {
         path: "/unique",
         element: <UniqueTable/>,
-        loader: () => fetch("http://localhost:5000/blogs"),
+        loader: () => fetch("https://game-server-woad.vercel.app/blogs"),
       },
 
 

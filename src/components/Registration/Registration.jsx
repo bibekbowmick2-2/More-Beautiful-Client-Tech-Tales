@@ -120,6 +120,8 @@ const Registration = () => {
                 </Link>
               </p>
             </form>
+
+            
             <div className="form-control ">
               <button
                 onClick={() => handleGoogle(navigate)}

@@ -30,7 +30,7 @@ const ProductDetailsPage = () => {
   React.useEffect(() => {
    const fetchComments = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/comment/${product._id}`);
+      const response = await fetch(`https://game-server-woad.vercel.app/comment/${product._id}`);
       const data = await response.json();
       console.log(data);
       setComments(data);
@@ -42,7 +42,7 @@ const ProductDetailsPage = () => {
    }
 
    fetchComments();
-  }, []);
+  }, [comments]);
 
 
 

@@ -76,7 +76,7 @@ const AuthProvider = ({ children }) => {
       email,
     };
 
-    fetch("http://localhost:5000/blogs", {
+    fetch("https://game-server-woad.vercel.app/blogs", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -123,7 +123,7 @@ const AuthProvider = ({ children }) => {
       genre,
     };
 
-    fetch(`http://localhost:5000/update-reviews/${id}`, {
+    fetch(`https://game-server-woad.vercel.app/update-reviews/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -181,10 +181,11 @@ const AuthProvider = ({ children }) => {
       await updateProfile(user, {
         displayName: name,
         photoURL: photo,
-      });
+      }
+       );
 
 
-      setLoading(false);
+      // setLoading(false);
       toast.success("User created successfully");
 
       console.log("Signed up User", user);
@@ -194,7 +195,11 @@ const AuthProvider = ({ children }) => {
       const errorMessage = error.message;
        toast.error(errorMessage);
       console.error("Error during sign-up", errorCode, errorMessage);
+    }finally
+    {
+      setLoading(false);
     }
+
   };
 
   const handleSubmit2 =  async(e, navigate) => {
@@ -203,21 +208,14 @@ const AuthProvider = ({ children }) => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     setLoading(true);
-   
-    // const error = validatePassword(password);
-    // if (error) {
-    //    setPasswordError(error); // Set the error message
-    //   return; // Stop form submission
-    // }
-
-    //  setPasswordError("");
+  
 
     await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
        
-      setLoading(false);
+       setLoading(false);
         console.log("Signed in  User", user);
         navigate("/");
         // ...
@@ -227,14 +225,17 @@ const AuthProvider = ({ children }) => {
         const errorMessage = error.message;
          
       }
+
       
       )
   };
 
   const handleGoogle = (navigate) => {
+    setLoading(true);
     signInWithPopup(auth, provider)
       .then((result) => {
         setUser(result.user);
+        setLoading(false);
         navigate("/");
       })
       .catch((error) => {
@@ -273,7 +274,7 @@ const AuthProvider = ({ children }) => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/my-review1/${id}`, {
+          fetch(`https://game-server-woad.vercel.app/my-review1/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -342,7 +343,7 @@ const AuthProvider = ({ children }) => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/watchlist1/${id}`, {
+          fetch(`https://game-server-woad.vercel.app/watchlist1/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -397,7 +398,7 @@ const AuthProvider = ({ children }) => {
 
     try{
       const updatedProduct = { ...product, email: userEmail };
-      const response = await fetch('http://localhost:5000/watchlist', {
+      const response = await fetch('https://game-server-woad.vercel.app/watchlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -461,7 +462,7 @@ const AuthProvider = ({ children }) => {
 
     }
    
-    fetch(`http://localhost:5000/comment`, {
+    fetch(`https://game-server-woad.vercel.app/comment`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
