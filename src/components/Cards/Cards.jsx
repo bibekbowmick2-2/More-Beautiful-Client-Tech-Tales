@@ -30,7 +30,7 @@ const Cards = ({ games }) => {
 
               <div className="card-actions justify-start">
                 <Link to={`/product-details/${game.title}`}>
-                  <button className="btn btn-accent">See More</button>
+                  <button className="btn btn-outline">See More</button>
                 </Link>
                 <br />
 

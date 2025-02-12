@@ -124,7 +124,7 @@ const Card = ({ reviews }) => {
 
             <div className="flex gap-2 ">
             <Link to={`/product-details/${review.title}`}>
-                  <button className="btn btn-accent">Explore Details</button>
+                  <button className="btn btn-outline">Explore Details</button>
                 </Link>
 
 

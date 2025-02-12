@@ -57,7 +57,7 @@ export default function GameWatchListData({ items }) {
 
               <td>
                 <Link to={`/product-details/${review.title}`}>
-                  <button className="btn btn-accent">Details</button>
+                  <button className="btn btn-outline btn-accent">Details</button>
                 </Link>
               </td>
               <td>
