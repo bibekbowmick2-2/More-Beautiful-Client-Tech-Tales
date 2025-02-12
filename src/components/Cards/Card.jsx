@@ -101,7 +101,7 @@ const Card = ({ reviews }) => {
 </div>:
 <>
 {results.map((review, index) => (
-        <div key={index} className="card w-11/12 mx-auto">
+        <div key={index} className="card w-11/12 mx-auto h-[450px] overflow-y-auto">
           <div class="avatar">
             <div class="w-12">
               <img src={review?.image} alt="BKB" />

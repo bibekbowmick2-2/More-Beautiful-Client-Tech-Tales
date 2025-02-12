@@ -18,8 +18,8 @@ const Header = () => {
 
   const link = (
     <>
-    <button className="mr-3">
-      <input type="checkbox" value="bw" className="toggle " onChange={handleToggle} />
+    <button className="mr-3 ">
+      <input type="checkbox" value="bw" className="toggle bg-[#341fae]" onChange={handleToggle} />
     </button>
      
       <li className="">

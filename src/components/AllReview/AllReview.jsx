@@ -101,7 +101,7 @@ const AllReview = () => {
 
 <div className="dropdown mt-4">
             <div tabIndex="0" role="button" className="btn m-1">
-              Filter by Category
+              Sort by Category
             </div>
             <ul tabIndex="0" className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
               {genres.map((genre) => (
