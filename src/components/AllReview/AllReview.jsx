@@ -72,8 +72,8 @@ const AllReview = () => {
   
    
   return (
-    <header className="header">
-      <div className="container">
+    <header className="header p-16">
+      <div className="container ">
         <div className="container__left ">
         {
           loading ? (

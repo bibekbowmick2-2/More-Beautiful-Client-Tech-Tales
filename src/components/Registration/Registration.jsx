@@ -27,16 +27,16 @@ const Registration = () => {
       <Lottie   animationData={Animation} loop={true} />
       </div>
 
-      <div className="hero bg-opacity-80  lg:max-w-md   rounded-xl bg-[#d5a9c9]">
+      <div className="hero   lg:max-w-md   rounded-xl bg-[#0b0435]  mt-14">
      
 
 
         <div className="hero-content max-w-sm flex-col">
 
-          <h1 className="text-3xl">Registration</h1>
-          <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
+          <h1 className="text-3xl text-white font-extrabold">Registration</h1>
+          <div className="card bg-[#0b0435] w-full shrink-0 shadow-2xl">
             <form
-              className="card-body max-w-md mx-auto lg:max-w-6xl"
+              className="card-body max-w-md mx-auto lg:max-w-6xl "
               onSubmit={handleFormSubmit}
             >
               <div className="form-control">

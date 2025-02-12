@@ -17,10 +17,10 @@ export default function GameWatchListData({ items }) {
     );
   }
   return (
-    <div className=" overflow-x-scroll overflow-y-scroll lg:overflow-auto  bg-[#9eb3e1] mt-6 min-h-screen lg:min-h-lvh ">
+    <div className=" overflow-x-scroll overflow-y-scroll lg:overflow-auto  bg-[#080325] mt-6 min-h-screen lg:min-h-lvh text-white p-16">
       <table className="table table-xs ">
         <thead>
-          <tr>
+          <tr className="text-white">
             <th className="lg:font-extrabold lg:text-2xl">Serial No</th>
             <th className="lg:font-extrabold lg:text-2xl">Image</th>
             <th className="lg:font-extrabold lg:text-2xl">Name</th>

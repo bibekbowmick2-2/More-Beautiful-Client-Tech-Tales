@@ -95,7 +95,7 @@ export default function UniqueTable() {
     }
     
   return (
-    <div className='min-h-screen bg-[#a2c5cd]'>
+    <div className='min-h-screen bg-[#080325] py-16'>
         <DataTable
 			columns={columns}
 			data={data}

@@ -156,7 +156,7 @@ const Card = ({ reviews }) => {
               </div>
             )}
            
-               <h4 className="ml-0">Written By:{user?.displayName}</h4>
+               <h4 className="ml-0 text-black">Written By:{user?.displayName}</h4>
            
            
           </div>
