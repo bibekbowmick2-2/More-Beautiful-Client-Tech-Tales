@@ -18,11 +18,11 @@ const Header = () => {
 
   const link = (
     <>
-    <button>
+    <button className="mr-3">
       <input type="checkbox" value="bw" className="toggle " onChange={handleToggle} />
     </button>
      
-      <li>
+      <li className="">
         <NavLink to="/home">Home</NavLink>
       </li>
       <li>
@@ -74,7 +74,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar bg-[#159bfc]  ">
+    <div className="navbar bg-[#080325] text-white  ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

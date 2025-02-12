@@ -60,7 +60,7 @@ export default function UniqueTable() {
           secondary: '#2aa198',
         },
         background: {
-          default: '#002b36',
+          default: '#080325',
         },
         context: {
           background: '#cb4b16',

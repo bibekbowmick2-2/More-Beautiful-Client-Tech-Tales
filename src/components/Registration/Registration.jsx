@@ -20,7 +20,7 @@ const Registration = () => {
 
   return (
     <div
-      className="grid sm:grid-cols-1  lg:grid-cols-2  justify-center items-center  min-h-lvh pt-[30px] px-4  lg:pt-[30px]  bg-[#9b4284] "
+      className="grid sm:grid-cols-1  lg:grid-cols-2  justify-center items-center  min-h-lvh pt-[30px] px-4  lg:pt-[30px]  bg-[#080325] "
     >
        
        <div className="max-w-[800px] max-h-[800px]">
