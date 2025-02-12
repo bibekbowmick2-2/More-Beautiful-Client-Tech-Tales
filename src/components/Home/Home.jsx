@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import Cards from '../Cards/Cards';
 import MoreQuestion from '../MoreQuestion/MoreQuestion';
 import MoreFeatures from '../MoreFeature/MoreFeatures';
+import GoogleMap from '../GoogleMap/GoogleMap';
 import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
@@ -13,9 +14,13 @@ const Home = () => {
         
             <Banner></Banner>
             <MoreFeatures></MoreFeatures>
+           
+    
             <Cards games={games}></Cards>
 
+
             <MoreQuestion></MoreQuestion>
+            <GoogleMap></GoogleMap>
         </div>
     );
 };
