@@ -1,138 +1,116 @@
 import React, { useContext } from "react";
-import dragonbg from "../../assets/dragonbg.jpg";
 import { ContextProvider } from "../AuthProviders/AuthProvider";
 import { useNavigate, Link } from "react-router-dom";
-import Animation from "./Animation.json";
 import Lottie from "lottie-react";
+import Animation from "./Animation.json";
+
 const Registration = () => {
   const { handleSubmit, handleGoogle, loading, passwordError } = useContext(ContextProvider);
   const navigate = useNavigate();
 
   const handleFormSubmit = (e) => {
-    handleSubmit(e, navigate); // Pass navigate to the context's method
+    handleSubmit(e, navigate);
   };
 
-
-  // const style = {
-  //   width: 800,
-  //   height: 800,
-  // }
-
   return (
-    <div
-      className="grid sm:grid-cols-1  lg:grid-cols-2  justify-center items-center  min-h-lvh pt-[30px] px-4  lg:pt-[30px]  bg-[#080325] "
-    >
-       
-       <div className="max-w-[800px] max-h-[800px]">
-      <Lottie   animationData={Animation} loop={true} />
+    <div className="min-h-screen bg-[#080325] flex flex-col lg:flex-row items-center justify-center px-6 py-10">
+      
+      <div className="w-full lg:w-1/2 mb-10 lg:mb-0 flex justify-center">
+        <Lottie animationData={Animation} loop={true} className="w-full max-w-[500px]" />
       </div>
 
-      <div className="hero   lg:max-w-md   rounded-xl bg-[#0b0435]  mt-14">
-     
+    
+      <div className="bg-[#0b0435] text-white rounded-2xl shadow-2xl w-full max-w-md p-8">
+        <h2 className="text-3xl font-bold text-center mb-6">Create Your Account</h2>
+        <form onSubmit={handleFormSubmit} className="space-y-5">
+      
+          <div>
+            <label className="block mb-1 text-sm font-semibold">Name</label>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Enter your name"
+              className="w-full px-4 py-2 rounded-md border border-gray-300 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
 
+      
+          <div>
+            <label className="block mb-1 text-sm font-semibold">Email</label>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Enter your email"
+              className="w-full px-4 py-2 rounded-md border border-gray-300 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
 
-        <div className="hero-content max-w-sm flex-col">
+        
+          <div>
+            <label className="block mb-1 text-sm font-semibold">Photo URL</label>
+            <input
+              type="text"
+              name="photo"
+              required
+              placeholder="Enter photo URL"
+              className="w-full px-4 py-2 rounded-md border border-gray-300 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
 
-          <h1 className="text-3xl text-white font-extrabold">Registration</h1>
-          <div className="card bg-[#0b0435] w-full shrink-0 shadow-2xl">
-            <form
-              className="card-body max-w-md mx-auto lg:max-w-6xl "
-              onSubmit={handleFormSubmit}
-            >
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="name"
-                  name="name"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="email"
-                  name="email"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo URL</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="photo"
-                  name="photo"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  name="password"
-                  className="input input-bordered"
-                  required
-                />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
+      
+          <div>
+            <label className="block mb-1 text-sm font-semibold">Password</label>
+            <input
+              type="password"
+              name="password"
+              required
+              placeholder="Create a password"
+              className="w-full px-4 py-2 rounded-md border border-gray-300 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <p className="text-xs text-right mt-1">
+              <a href="#" className="text-blue-400 hover:underline">Forgot password?</a>
+            </p>
+          </div>
 
-              
-              </div>
-
-              {loading ? (
-                <div className="flex items-center justify-center ">
-                  <span className="loading loading-spinner loading-lg"></span>
-                </div>
-              ) : (
-                <></> // or null
-              )}
-              <div className="form-control mt-2">
-                <button type="submit" className="btn btn-primary">
-                  Registration
-                </button>
-              </div>
-
-
-              {passwordError && (
+    
+          {passwordError && (
             <p className="text-red-500 text-sm mt-1">{passwordError}</p>
           )}
 
-              <p>
-                Aready have an account? then click on{" "}
-                <Link className="hover:text-red-300" to="/login">
-                  Login
-                </Link>
-              </p>
-            </form>
-
-            
-            <div className="form-control ">
-              <button
-                onClick={() => handleGoogle(navigate)}
-                type="submit"
-                className="btn btn-primary"
-              >
-                Login with Google
-              </button>
+    
+          {loading && (
+            <div className="flex justify-center">
+              <span className="loading loading-spinner loading-lg text-white"></span>
             </div>
-          </div>
-        </div>
+          )}
+
+        
+          <button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+            Register
+          </button>
+
+         
+          <div className="text-center text-sm text-gray-400 mt-2">or</div>
+
+    
+          <button
+            onClick={() => handleGoogle(navigate)}
+            type="button"
+            className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
+          >
+            Continue with Google
+          </button>
+
+      
+          <p className="text-sm mt-4 text-center">
+            Already have an account?{" "}
+            <Link to="/login" className="text-blue-400 hover:underline">
+              Login here
+            </Link>
+          </p>
+        </form>
       </div>
     </div>
   );
