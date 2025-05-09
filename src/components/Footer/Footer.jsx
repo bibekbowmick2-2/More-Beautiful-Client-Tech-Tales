@@ -1,62 +1,83 @@
 import React from 'react';
-import dragonbg from '../../assets/footerbg.jpg'
+import dragonbg from '../../assets/footerbg.jpg';
+
 const Foooter = () => {
-    return (
-        <div  style={{
-            backgroundImage: `url(${dragonbg})`, backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: 'right'
-        }}>
-            <footer className="footer footer-center bg-[#080325c2] text-base-content rounded p-10 ">
-                <nav className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-                    <a className="link link-hover opacity-100 text-xl text-white ">About us</a>
-                    <a className="link link-hover opacity-100 text-xl text-white">Contact</a>
-                    <a className="link link-hover opacity-100 text-xl text-white">Jobs</a>
-                    <a className="link link-hover opacity-100 text-xl text-white">Press kit</a>
-                </nav>
-                <nav>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-[100px] p-5">
-                        <a className='lg:bg-black lg:p-5'>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="54"
-                                height="54"
-                                viewBox="0 0 24 24"
-                                className="fill-current">
-                                <path
-                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                            </svg>
-                        </a>
-                        <a className='lg:bg-black lg:p-5'>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="54"
-                                height="54"
-                                viewBox="0 0 24 24"
-                                className="fill-current">
-                                <path
-                                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                            </svg>
-                        </a>
-                        <a className='lg:bg-black lg:p-5'>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="54"
-                                height="54"
-                                viewBox="0 0 24 24"
-                                className="fill-current">
-                                <path
-                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </nav>
-            </footer>
-            <div className='text-center bg-[#080325c2] px-5 w-full'>
-                    <p className='text-white text-xl '>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
-            </div>
-        </div>
-    );
+  return (
+    <div
+      style={{
+        backgroundImage: `url(${dragonbg})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+      className="text-white"
+    >
+      <footer className="footer footer-center bg-[#080325c2] backdrop-blur-md text-base-content p-4 rounded-t-xl shadow-xl mt-2">
+        
+        <nav className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <a className="link link-hover text-lg hover:underline hover:text-orange-400 text-white transition duration-300">About Us</a>
+          <a className="link link-hover text-lg hover:underline hover:text-orange-400 text-white transition duration-300">Contact</a>
+          <a className="link link-hover text-lg hover:underline hover:text-orange-400 text-white transition duration-300">Jobs</a>
+          <a className="link link-hover text-lg hover:underline hover:text-orange-400 text-white transition duration-300">Press Kit</a>
+        </nav>
+
+        
+        
+
+        <nav>
+  <div className="flex justify-center items-center gap-10 mt-6">
+    
+    <a className="bg-[#1DA1F2] p-4 rounded-full hover:bg-white transition duration-300 group">
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        className="fill-white group-hover:fill-[#1DA1F2]"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.86 9.86 0 0 1-3.127 1.195A4.916 4.916 0 0 0 16.616 3c-2.723 0-4.932 2.208-4.932 4.932 0 .386.044.763.127 1.124C7.728 8.882 4.1 6.89 1.671 3.914a4.902 4.902 0 0 0-.666 2.478c0 1.71.87 3.216 2.188 4.099a4.904 4.904 0 0 1-2.23-.616v.063c0 2.385 1.693 4.374 3.946 4.827a4.935 4.935 0 0 1-2.224.084c.626 1.956 2.444 3.379 4.6 3.419a9.875 9.875 0 0 1-6.102 2.105c-.396 0-.787-.023-1.17-.069a13.945 13.945 0 0 0 7.557 2.212c9.054 0 14-7.496 14-13.986 0-.213-.005-.425-.014-.637A9.936 9.936 0 0 0 24 4.557z" />
+      </svg>
+    </a>
+
+    
+    <a className="bg-[#FF0000] p-4 rounded-full hover:bg-white transition duration-300 group">
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        className="fill-white group-hover:fill-[#FF0000]"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.45.03 5.804 0 12c.03 6.185.488 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.267 4.356-2.62 4.385-8.816-.029-6.185-.488-8.549-4.385-8.816zM9 15.516v-7.032l6.6 3.516L9 15.516z" />
+      </svg>
+    </a>
+
+
+    <a className="bg-[#1877F2] p-4 rounded-full hover:bg-white transition duration-300 group">
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        className="fill-white group-hover:fill-[#1877F2]"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24H12.82v-9.294H9.692V11.01h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24h-1.919c-1.505 0-1.796.716-1.796 1.763v2.314h3.587l-.467 3.696h-3.12V24h6.116C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
+      </svg>
+    </a>
+  </div>
+</nav>
+
+
+      </footer>
+
+    
+      <div className="bg-[#080325c2] backdrop-blur-md text-center py-4">
+        <p className="text-md md:text-lg text-white">
+          © {new Date().getFullYear()} — All rights reserved by <span className="font-semibold text-orange-400">ACME Industries Ltd.</span>
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default Foooter;

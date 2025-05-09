@@ -21,7 +21,7 @@ const Login = () => {
       <div className="w-full max-w-md bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
         <h2 className="text-3xl text-white font-bold text-center mb-6">Welcome Back</h2>
         <form onSubmit={handleFormSubmit} className="space-y-5">
-          {/* Email */}
+      
           <div>
             <label className="block text-sm font-medium text-white mb-1">Email</label>
             <input
@@ -33,7 +33,7 @@ const Login = () => {
             />
           </div>
 
-          {/* Password */}
+    
           <div>
             <label className="block text-sm font-medium text-white mb-1">Password</label>
             <input
@@ -48,7 +48,7 @@ const Login = () => {
             </p>
           </div>
 
-          {/* Loader or Submit */}
+        
           {loading ? (
             <div className="flex justify-center">
               <span className="loading loading-spinner loading-lg text-white"></span>
@@ -62,7 +62,7 @@ const Login = () => {
             </button>
           )}
 
-          {/* Redirect */}
+      
           <p className="text-sm text-center text-white mt-4">
             Don’t have an account?{" "}
             <Link to="/register" className="text-blue-300 hover:underline">
