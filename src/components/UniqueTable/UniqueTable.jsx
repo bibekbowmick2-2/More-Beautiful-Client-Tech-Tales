@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import DataTable, { createTheme } from 'react-data-table-component';
 import { useLoaderData } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+
+
 
 export default function UniqueTable() {
   const loaderData = useLoaderData();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const getWordCount = (text) => (text ? text.split(/\s+/).length : 0);
 
@@ -14,7 +27,8 @@ export default function UniqueTable() {
   const columns = [
     {
       name: 'Image',
-      selector: row => (
+      selector: (row) => (
+        loading ? <Skeleton height={64} width={64}  baseColor="#d1d5db" highlightColor="#e5e7eb"/> :
         <img
           src={row.image}
           alt={row.title}
@@ -26,30 +40,30 @@ export default function UniqueTable() {
     },
     {
       name: 'Title',
-      selector: row => row.title,
+      selector: (row) => (loading ? <Skeleton count={1} height={40} width={100}  baseColor="#d1d5db" highlightColor="#e5e7eb" /> : row.title),
       sortable: true,
       wrap: true,
     },
     {
       name: 'Short Description',
-      selector: row => row.shortDescription,
+      selector: (row) => (loading ? <Skeleton count={1} height={50} width={130} /> : row.shortDescription),
       sortable: true,
       wrap: true,
     },
     {
       name: 'Long Description',
-      selector: row => row.longDescription,
+      selector: (row) => (loading ? <Skeleton count={1} height={50} width={130} /> : row.longDescription),
       sortable: true,
       wrap: true,
     },
     {
       name: 'Category',
-      selector: row => row.category,
+      selector: (row) => (loading ? <Skeleton height={60} width={90} /> : row.category),
       sortable: true,
     },
     {
       name: 'Email',
-      selector: row => row.email,
+      selector: (row) => (loading ? <Skeleton height={50} width={130} /> : row.email),
       sortable: true,
       wrap: true,
     },
@@ -106,12 +120,12 @@ export default function UniqueTable() {
   return (
     <div className="min-h-screen bg-[#080325] py-10 px-4 md:px-10">
       <h2 className="text-white text-2xl md:text-3xl font-bold mb-6 text-center p-6">
-        Top  Games by Description Length
+        Top Games by Description Length
       </h2>
       <div className="overflow-x-auto rounded-lg shadow-lg">
         <DataTable
           columns={columns}
-          data={filteredData}
+          data={loading ? Array(12).fill({}) : filteredData}
           pagination
           selectableRows
           theme="solarized"

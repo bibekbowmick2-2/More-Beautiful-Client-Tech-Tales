@@ -59,4 +59,4 @@ const GameWatchListData = ({ items }) => {
   );
 };
 
-export { GameWatchListData };
+export  default GameWatchListData;

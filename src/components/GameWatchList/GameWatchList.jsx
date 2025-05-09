@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { ContextProvider } from '../AuthProviders/AuthProvider';
-import GameWatchListData from './GameWatchListData';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import GameWatchListData from './GameWatchListData';
 
 const GameWatchList = () => {
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ const GameWatchList = () => {
     };
 
     fetchMyReviews();
-  }, [user.email]);
+  }, [user.email,items]);
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-10 ">
