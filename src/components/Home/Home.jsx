@@ -10,7 +10,7 @@ const Home = () => {
     const games = useLoaderData();
     
     return (
-        <div  className='bg-[#080325] z-1  max-w-md md:max-w-3xl lg:max-w-6xl mx-auto'>
+        <div  className='bg-[#080325] z-1  max-w-md md:max-w-4xl lg:max-w-[1350px] mx-auto'>
         
             <Banner></Banner>
             <MoreFeatures></MoreFeatures>

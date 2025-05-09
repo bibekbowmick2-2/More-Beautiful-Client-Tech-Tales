@@ -20,16 +20,7 @@ const Card = ({ reviews }) => {
  },[reviews]);
 
 
-// useEffect(() => {
-//   if (Array.isArray(reviews)) {
-//     setResults(reviews);
-//   } else {
-//     alert("Invalid data format: Reviews should be an array.");
-//     console.error("Invalid data format: Reviews should be an array.");
-//   }
 
-
-//  },[reviews]);
   
 
   if (!results || results.length === 0) {
