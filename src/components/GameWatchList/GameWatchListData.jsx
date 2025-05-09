@@ -1,72 +1,55 @@
-import React, { useContext } from "react";
-import { ContextProvider } from "../AuthProviders/AuthProvider";
-import { Link } from "react-router-dom";
-import { PhotoProvider, PhotoView } from "react-photo-view";
-import "react-photo-view/dist/react-photo-view.css";
 
-export default function GameWatchListData({ items }) {
+import React, { useContext } from 'react';
+import { ContextProvider } from '../AuthProviders/AuthProvider';
+import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
+const GameWatchListData = ({ items }) => {
   const { user, handleWishDelete } = useContext(ContextProvider);
 
   if (!items || items.length === 0) {
     return (
-      <div className="min-h-lvh bg-[#9eb3e1]  flex justify-center items-center">
-        <p className="text-orange-200 font-extrabold text-5xl ">
-          No WatchList available
-        </p>
+      <div className="min-h-[60vh] flex justify-center items-center">
+        <p className="text-3xl font-bold text-gray-500">No WatchList Available</p>
       </div>
     );
   }
+
   return (
-    <div className=" overflow-x-scroll overflow-y-scroll lg:overflow-auto  bg-[#080325] mt-6 min-h-screen lg:min-h-lvh text-white p-16">
-      <table className="table table-xs ">
-        <thead>
-          <tr className="text-white">
-            <th className="lg:font-extrabold lg:text-2xl">Serial No</th>
-            <th className="lg:font-extrabold lg:text-2xl">Image</th>
-            <th className="lg:font-extrabold lg:text-2xl">Name</th>
-            <th className="lg:font-extrabold lg:text-2xl">Title</th>
-            <th className="lg:font-extrabold lg:text-2xl">Email</th>
-            <th className="lg:font-extrabold lg:text-2xl">Short Description</th>
-            <th className="lg:font-extrabold lg:text-2xl">Category</th>
+    <div className="overflow-x-auto rounded-lg mt-10">
+      <table className="table-auto w-full text-left">
+        <thead className="bg-gray-800 text-white">
+          <tr>
+            <th className="px-4 py-2">#</th>
+            <th className="px-4 py-2">Image</th>
+            <th className="px-4 py-2">Name</th>
+            <th className="px-4 py-2">Title</th>
+            <th className="px-4 py-2">Email</th>
+            <th className="px-4 py-2">Short Description</th>
+            <th className="px-4 py-2">Category</th>
+            <th className="px-4 py-2">Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="bg-gray-700">
           {items.map((review, index) => (
-            <tr key={index}>
-              <th className="lg:font-extrabold">{index + 1}</th>
-              <td>
-                <div class="flex items-center gap-3">
-                  <div class="avatar">
-                    <div class="mask mask-squircle h-12 w-12">
-                     
-
-                      <PhotoProvider>
-                        <PhotoView src={review?.image}>
-                          <img src={review?.image} alt="" />
-                        </PhotoView>
-                      </PhotoProvider>
-                    </div>
-                  </div>
-                </div>
+            <tr key={index} className="hover:bg-gray-600">
+              <td className="px-4 py-2">{index + 1}</td>
+              <td className="px-4 py-2">
+                <PhotoProvider>
+                  <PhotoView src={review?.image}>
+                    <img src={review?.image} alt="" className="h-12 w-12 rounded-lg" />
+                  </PhotoView>
+                </PhotoProvider>
               </td>
-              <td className="lg:font-extrabold">{user?.displayName}</td>
-              <td className="lg:font-extrabold">{review?.title}</td>
-              <td className="lg:font-extrabold">{review?.email}</td>
-              <td className="lg:font-extrabold">{review?.shortDescription}</td>
-              <td className="lg:font-extrabold">{review?.category}</td>
-
-              <td>
-                <Link to={`/product-details/${review.title}`}>
-                  <button className="btn btn-outline btn-accent">Details</button>
-                </Link>
-              </td>
-              <td>
-                <button
-                  className="btn btn-error"
-                  onClick={() => handleWishDelete(review?._id)}
-                >
-                  Remove
-                </button>
+              <td className="px-4 py-2">{user?.displayName}</td>
+              <td className="px-4 py-2">{review?.title}</td>
+              <td className="px-4 py-2">{review?.email}</td>
+              <td className="px-4 py-2">{review?.shortDescription}</td>
+              <td className="px-4 py-2">{review?.category}</td>
+              <td className="px-4 py-2 flex gap-2">
+                <Link to={`/product-details/${review.title}`} className="btn btn-sm btn-primary">Details</Link>
+                <button className="btn btn-sm btn-error" onClick={() => handleWishDelete(review?._id)}>Remove</button>
               </td>
             </tr>
           ))}
@@ -74,4 +57,6 @@ export default function GameWatchListData({ items }) {
       </table>
     </div>
   );
-}
+};
+
+export { GameWatchListData };

@@ -2,54 +2,78 @@ import React from "react";
 
 export default function FAQ() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-lvh mt-4 gap-5">
-      <h1 className="text-4xl lg:text-5xl mx-auto text-color font-extrabold">
-        Your Frequently Asked Questions
+    <div className="flex flex-col items-center justify-center min-h-lvh px-4 py-10 gap-8 bg-gradient-to-br from-indigo-900 via-indigo-700 to-purple-800">
+      <h1 className="text-4xl lg:text-5xl text-white font-extrabold text-center drop-shadow-md">
+        Frequently Asked Questions
       </h1>
 
+      <div className="w-full max-w-4xl space-y-4">
+        {/* Question 1 */}
+        <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-xl shadow-lg">
+          <input type="radio" name="faq-accordion" defaultChecked />
+          <div className="collapse-title text-lg lg:text-xl font-semibold text-indigo-700">
+            What is the purpose of this application?
+          </div>
+          <div className="collapse-content text-gray-700 leading-relaxed text-sm">
+            <p>
+              This application helps users find and collect discount coupons and voucher codes
+              from various e-commerce stores in Bangladesh, making online shopping more affordable.
+            </p>
+          </div>
+        </div>
 
-      <div class="collapse collapse-arrow bg-indigo-500 w-5/6">
-  <input type="radio" name="my-accordion-2" checked="checked" />
-  <div class="collapse-title text-xl font-medium">What is the purpose of this application?</div>
-  <div class="collapse-content">
-    <p>This application is designed to help users find and collect discount coupons and voucher codes from various e-commerce stores in Bangladesh. It provides an easy and convenient way to browse, copy, and use these coupons to save money while shopping online.</p>
-  </div>
-</div>
-<div class="collapse collapse-arrow bg-indigo-500 w-5/6">
-  <input type="radio" name="my-accordion-2" />
-  <div class="collapse-title text-xl font-medium">How can I sign up and log in to the application?</div>
-  <div class="collapse-content">
-    <p>Users can sign up or log in using their email address and password. Alternatively, you can log in using your Google account through Firebase Authentication for a faster and secure experience.</p>
-  </div>
-</div>
-<div class="collapse collapse-arrow bg-indigo-500 w-5/6">
-  <input type="radio" name="my-accordion-2" />
-  <div class="collapse-title text-xl font-medium">What types of coupons are available in this application?</div>
-  <div class="collapse-content">
-    <p>The application provides coupons for a variety of e-commerce stores in Bangladesh. These include discounts on products, cashback offers, free shipping deals, and more. Each coupon includes details such as the discount amount, expiry date, and applicable product categories.</p>
-  </div>
-</div>
+        {/* Question 2 */}
+        <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-xl shadow-lg">
+          <input type="radio" name="faq-accordion" />
+          <div className="collapse-title text-lg lg:text-xl font-semibold text-indigo-700">
+            How can I sign up and log in to the application?
+          </div>
+          <div className="collapse-content text-gray-700 leading-relaxed text-sm">
+            <p>
+              You can sign up or log in using your email and password, or use your Google account via Firebase Authentication for a fast and secure experience.
+            </p>
+          </div>
+        </div>
 
+        {/* Question 3 */}
+        <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-xl shadow-lg">
+          <input type="radio" name="faq-accordion" />
+          <div className="collapse-title text-lg lg:text-xl font-semibold text-indigo-700">
+            What types of coupons are available in this application?
+          </div>
+          <div className="collapse-content text-gray-700 leading-relaxed text-sm">
+            <p>
+              You’ll find discounts, cashback offers, free shipping, and more. Each coupon comes with details like discount amount, expiry date, and applicable categories.
+            </p>
+          </div>
+        </div>
 
-<div class="collapse collapse-arrow bg-indigo-500 w-5/6">
-  <input type="radio" name="my-accordion-2" />
-  <div class="collapse-title text-xl font-medium">Are the coupons updated regularly?</div>
-  <div class="collapse-content">
-    <p>Yes, the application is updated regularly to ensure that users have access to the latest coupons and offers. Expired or invalid coupons are removed, and new coupons are added as soon as they become available.</p>
-  </div>
-</div>
+        {/* Question 4 */}
+        <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-xl shadow-lg">
+          <input type="radio" name="faq-accordion" />
+          <div className="collapse-title text-lg lg:text-xl font-semibold text-indigo-700">
+            Are the coupons updated regularly?
+          </div>
+          <div className="collapse-content text-gray-700 leading-relaxed text-sm">
+            <p>
+              Yes! Our app is updated frequently to ensure you get the latest offers. Expired coupons are removed automatically.
+            </p>
+          </div>
+        </div>
 
-
-<div class="collapse collapse-arrow bg-indigo-500 w-5/6">
-  <input type="radio" name="my-accordion-2" />
-  <div class="collapse-title text-xl font-medium">How can I use the coupons found in this application?</div>
-  <div class="collapse-content">
-    <p>To use a coupon, simply browse the available options, click on a coupon to view its details, and copy the coupon code with one click. Then, paste the code at checkout on the respective e-commerce store's website to avail the discount.</p>
-  </div>
-</div>
-
-
-     
+        {/* Question 5 */}
+        <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-xl shadow-lg">
+          <input type="radio" name="faq-accordion" />
+          <div className="collapse-title text-lg lg:text-xl font-semibold text-indigo-700">
+            How can I use the coupons found in this application?
+          </div>
+          <div className="collapse-content text-gray-700 leading-relaxed text-sm">
+            <p>
+              Just click on a coupon, copy the code, and paste it at checkout on the relevant website to enjoy the discount!
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

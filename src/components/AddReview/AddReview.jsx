@@ -26,7 +26,7 @@ const AddReview = () => {
           <span className="loading loading-spinner loading-lg"></span>
         </div>
       ) : (
-        <div className="bg-white bg-opacity-10 backdrop-blur-md p-10 rounded-2xl shadow-xl w-full max-w-2xl">
+        <div className="bg-white bg-opacity-10 backdrop-blur-md p-10 rounded-2xl shadow-xl w-full max-w-2xl mt-4 text-gray-300">
           <h1 className="text-4xl font-bold mb-6 text-gray-800">Add Blog</h1>
           <form onSubmit={handleFormSubmit} className="space-y-5">
             <div className="form-control">

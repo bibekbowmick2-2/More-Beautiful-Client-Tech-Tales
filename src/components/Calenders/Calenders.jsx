@@ -26,7 +26,7 @@ const Calendars = () => {
   };
 
   return (
-    <div className="relative w-full max-h-[300px] md:max-h-[500px] lg:max-h-[1000px] overflow-hidden">
+    <div className="relative w-full max-h-[300px] md:max-h-[500px] lg:max-h-[1000px] overflow-hidden bg-[#080325]">
       <Lottie style={style} animationData={Animation} loop={true} />
       <div className="mt-0 md:mt-[100px] lg:mt-[500px] mx-auto w-11/12 lg:h-[1000px] ">
         <div className="">
