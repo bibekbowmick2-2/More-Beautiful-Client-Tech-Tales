@@ -19,7 +19,7 @@ const GameWatchListData = ({ items }) => {
   return (
     <div className="overflow-x-auto rounded-lg mt-10">
       <table className="table-auto w-full text-left">
-        <thead className="bg-gray-800 text-white">
+        <thead className="bg-[#0e0544] text-white">
           <tr>
             <th className="px-4 py-2">#</th>
             <th className="px-4 py-2">Image</th>

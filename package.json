@@ -12,6 +12,7 @@
   "dependencies": {
     "@tanstack/react-table": "^8.20.6",
     "antd": "^5.22.5",
+    "aos": "^2.3.4",
     "axios": "^1.7.9",
     "firebase": "^11.0.2",
     "flowbite-react": "^0.10.2",

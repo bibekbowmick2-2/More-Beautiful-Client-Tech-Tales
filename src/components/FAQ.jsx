@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FAQ() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-lvh px-4 py-10 gap-8 bg-gradient-to-br from-indigo-900 via-indigo-700 to-purple-800">
+    <div className="flex flex-col items-center justify-center min-h-lvh px-4 py-10 gap-8 bg-[#080325]">
       <h1 className="text-4xl lg:text-5xl text-white font-extrabold text-center drop-shadow-md">
         Frequently Asked Questions
       </h1>

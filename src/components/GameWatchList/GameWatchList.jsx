@@ -35,7 +35,7 @@ const GameWatchList = () => {
   }, [user.email,items]);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-10 ">
+    <div className="min-h-screen bg-[#080325] text-white p-10 ">
       {loading ? (
         <Skeleton height={100} count={6} baseColor="#1f2937" highlightColor="#374151" borderRadius={10} className='mb-4' />
       ) : error ? (
