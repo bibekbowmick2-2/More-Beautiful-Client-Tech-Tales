@@ -6,6 +6,38 @@
 # Live Site Link: https://tech-tales2025.netlify.app/
 
 
+## 🛠 Tech Stack
+
+- **Frontend:** React.js
+- **Backend:** Express.js (Node.js)
+- **Database:** MongoDB
+- **Styling:** Tailwind CSS
+
+---
+
+## 🚀 Setup Instructions
+
+1. Clone the project to your local computer:
+
+   ```bash
+   git clone https://github.com/bibekbowmick2-2/More-Beautiful-Client-Tech-Tales.git
+
+2.  ```bash
+    cd More-Beautiful-Client-Tech-Tales-main
+    
+3.   ```bash
+     npm install
+
+4. 3.   ```bash
+     npm run dev
+    
+    
+
+
+
+
+
+
 ### NPM Packages Used:
 
   - "@tanstack/react-table"
@@ -31,7 +63,7 @@
 
 
 
-###  Key Features for project
+###  Features List for project
 
 
 - Blog Management: Users can add, view, and manage blogs through dedicated sections such as 'All Blogs' and 'Add Blogs'. This makes it easy for users to navigate through the content and contribute their own posts.
