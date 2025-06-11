@@ -36,21 +36,21 @@ const ProductDetailsPage = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div className="max-w-full mx-auto px-6 py-4 grid grid-cols-1 md:grid-cols-2 gap-10 bg-[#080325]">
       {/* Left Section - Image */}
-      <div className="flex justify-center items-center">
-        <img className="rounded-2xl shadow-lg w-full max-w-md" src={product.image} alt={product.title} />
+      <div className="flex justify-center items-center gap-y-0 lg:gap-y-3">
+        <img className="rounded-2xl shadow-lg w-full max-w-md mt-20 lg:mt-0" src={product.image} alt={product.title} />
       </div>
 
       {/* Right Section - Content */}
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold text-gray-800 dark:text-white mt-20">{product.title}</h1>
+        <h1 className="text-3xl font-bold text-indigo-600 dark:text-white mt-20">{product.title}</h1>
         <div className="flex items-center space-x-1 text-yellow-400">
           {[...Array(4)].map((_, i) => <i key={i} className="fas fa-star"></i>)}
           <i className="fas fa-star-half-alt"></i>
         </div>
 
-        <div className="text-gray-600 dark:text-gray-300">
+        <div className="text-white dark:text-gray-300">
           <h2 className="text-xl font-semibold">About this item:</h2>
           <p>{product.longDescription}</p>
           <ul className="mt-4 space-y-2">
@@ -117,7 +117,7 @@ const ProductDetailsPage = () => {
         </div>
 
         <div className="mt-6 flex space-x-4 text-green-500">
-          <span className="text-gray-800 dark:text-white">Share at:</span>
+          <span className="text-white dark:text-white">Share at:</span>
           <a href="#"><i className="fab fa-facebook-f"></i></a>
           <a href="#"><i className="fab fa-twitter"></i></a>
           <a href="#"><i className="fab fa-instagram"></i></a>
