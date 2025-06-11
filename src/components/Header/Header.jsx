@@ -29,9 +29,7 @@ const Header = () => {
         <NavLink to="/allReviews">All Blogs</NavLink>
       </li>
 
-         <li>
-              <NavLink to="/calendar">Calendar</NavLink>
-            </li>
+         
 
             <li>
               <NavLink to="/unique">Featured Blogs</NavLink>
@@ -56,6 +54,10 @@ const Header = () => {
       <li>
         <NavLink to="/faq">FAQ</NavLink>
       </li>
+
+      <li>
+              <NavLink to="/calendar">Calendar</NavLink>
+            </li>
 
       {
         !user && (

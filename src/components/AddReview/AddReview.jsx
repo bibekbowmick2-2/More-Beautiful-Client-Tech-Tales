@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import dragonbg from "../../assets/dragonbg.jpg";
+import dragonbg from "../../assets/Homebg.jpg";
 import { ContextProvider } from "../AuthProviders/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
@@ -26,8 +26,8 @@ const AddReview = () => {
           <span className="loading loading-spinner loading-lg"></span>
         </div>
       ) : (
-        <div className="bg-white bg-opacity-10 backdrop-blur-md p-10 rounded-2xl shadow-xl w-full max-w-2xl mt-4 text-gray-300">
-          <h1 className="text-4xl font-bold mb-6 text-gray-800">Add Blog</h1>
+        <div className="bg-white bg-opacity-5 backdrop-blur-md p-10 rounded-2xl shadow-xl w-full max-w-2xl mt-4 text-gray-300">
+          <h1 className="text-4xl text-white font-bold mb-6 ">Add Blog</h1>
           <form onSubmit={handleFormSubmit} className="space-y-5">
             <div className="form-control">
               <label className="label font-semibold">Blog Title/Name</label>

@@ -92,16 +92,16 @@ const Card = ({ reviews }) => {
 </div>:
 <>
 {results.map((review, index) => (
-        <div key={index} className="card w-11/12 mx-auto h-[450px] overflow-y-auto">
+        <div key={index} className="card w-11/12 mx-auto h-[450px] overflow-y-auto  ">
           <div class="avatar">
             <div class="w-12">
               <img src={review?.image} alt="BKB" />
             </div>
           </div>
 
-          <p className="">{review?.title}</p>
+          <p className="text-xl font-bold">{review?.title}</p>
           <div className="card__content ">
-          <p>{review?.shortDescription || "Short description not available"}</p>
+          <p className="text-lg text-white">{review?.shortDescription || "Short description not available"}</p>
            
 
             <span>
@@ -109,8 +109,8 @@ const Card = ({ reviews }) => {
             </span>
           </div>
           <div className="card__details">
-          <p>{review?.longDescription || "Long description not available"}</p>
-          <p>{review?.category || "Category not specified"}</p>
+          <p className="text-[13px]">{review?.longDescription || "Long description not available"}</p>
+          <p className="text-[15px]">{review?.category || "Category not specified"}</p>
 
 
             <div className="flex gap-2 ">

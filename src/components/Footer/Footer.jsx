@@ -12,7 +12,7 @@ const Foooter = () => {
       }}
       className="text-white"
     >
-      <footer className="footer footer-center bg-[#080325c2] backdrop-blur-md text-base-content p-4 rounded-t-xl shadow-xl mt-2">
+      <footer className="footer footer-center   text-base-content p-4 rounded-t-xl mt-2">
         
         <nav className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <a className="link link-hover text-lg hover:underline hover:text-orange-400 text-white transition duration-300">About Us</a>
@@ -71,7 +71,7 @@ const Foooter = () => {
       </footer>
 
     
-      <div className="bg-[#080325c2] backdrop-blur-md text-center py-4">
+      <div className=" backdrop-blur-md text-center py-4">
         <p className="text-md md:text-lg text-white">
           © {new Date().getFullYear()} — All rights reserved by <span className="font-semibold text-orange-400">ACME Industries Ltd.</span>
         </p>

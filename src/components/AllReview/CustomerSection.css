@@ -2,14 +2,14 @@
 
 
 :root {
-  --primary-color: #ff226f;
-  --primary-color-dark: #fe6769;
+  --primary-color: #2525dc;
+  --primary-color-dark: #80fe67;
   --text-dark: #333333;
   --white: #ffffff;
 }
 
 header {
-  background-image: url("../../assets/loginbg.jpg");
+  background-image: url("../../assets/Homebg.jpg");
   
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -69,7 +69,7 @@ header {
   display: flex;
   align-items: flex-start;
   gap: 2rem;
-  background-color: #f1e4e195;
+  background-color: #94d2d995;
   opacity: 0.5;
   border-radius: 1rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
@@ -93,8 +93,9 @@ header {
 
 .card__details p {
   font-style: italic;
-  color: var(--text-dark);
+  color: white;
   margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .card__details h4 {
